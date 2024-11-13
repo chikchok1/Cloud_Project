@@ -1,4 +1,5 @@
 /* 기본 스타일 */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -16,7 +17,7 @@ body {
 
 .header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 34px;
 }
 
 .header .menu {
@@ -31,44 +32,64 @@ body {
   justify-content: center;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
+  font-size: 20px;
 }
 
 .navbar a {
-  margin: 0 20px;
+  margin: 0 50px;
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
 
 /* 영화 섹션 스타일 */
+
 .movies {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .movie-card {
-  width: 150px;
-  height: 220px;
+  position: relative;
+  width: 200px;
+  height: 300px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   margin: 0 15px;
   padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .movie-card img {
   width: 100%;
-  height: 70%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .movie-title {
-  margin-top: 10px;
-  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
   text-align: center;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 10px 10px;
+}
+
+.movie-card:hover img {
+  transform: scale(1.1);
+}
+
+.movie-card:hover .movie-title {
+  opacity: 1;
 }
