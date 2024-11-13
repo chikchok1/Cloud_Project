@@ -6,6 +6,8 @@ body {
   box-sizing: border-box;
 }
 
+
+
 /* 상단 메뉴 스타일 */
 .header {
   display: flex;
