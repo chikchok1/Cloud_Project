@@ -1,0 +1,124 @@
+/* 기본 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 상단 메뉴 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header .menu {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.navbar a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* 좌석 선택 영역 스타일 */
+.seat-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.seat-info {
+  width: 80%;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.seat-info table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.seat-info th {
+  background-color: #d0d0d0;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.seat-info td {
+  padding: 5px;
+}
+
+.movie-time {
+  text-align: right;
+  font-size: 14px;
+}
+
+.screen-area {
+  width: 80%;
+  background-color: #d0d0d0;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.screen {
+  background-color: #ffffff;
+  padding: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.seats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.pay-button {
+  background-color: #ccc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}

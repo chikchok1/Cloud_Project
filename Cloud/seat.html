@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Sons Cinema - 좌석 선택</title>
+    <link rel="stylesheet" href="seat_style.css" />
+    <!-- CSS 파일 연결 -->
+  </head>
+  <body>
+    <!-- 상단 메뉴 -->
+    <div class="header">
+      <h1>Three Sons Cinema</h1>
+      <div class="menu">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">마이페이지</a>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+      <a href="#">영화</a>
+      <a href="#">예매</a>
+      <a href="#">매점</a>
+      <a href="#">추천</a>
+    </div>
+
+    <!-- 좌석 선택 영역 -->
+    <div class="seat-selection">
+      <div class="seat-info">
+        <table>
+          <tr>
+            <th colspan="7">인원/좌석</th>
+          </tr>
+          <tr>
+            <td>일반</td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          <tr>
+            <td>청소년</td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          <tr>
+            <td>경로</td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+          </tr>
+          <tr>
+            <td>우대</td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
+          </tr>
+        </table>
+        <p class="movie-time">2024.11.11(월) 18:00 ~ 20:05</p>
+      </div>
+
+      <div class="screen-area">
+        <div class="screen">SCREEN</div>
+        <div class="seats">
+          <!-- 좌석 행 -->
+          <div class="seat-row">
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+          </div>
+          <div class="seat-row">
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+          </div>
+          <div class="seat-row">
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+          </div>
+          <div class="seat-row">
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+            <input type="checkbox" class="seat" />
+          </div>
+        </div>
+      </div>
+
+      <button class="pay-button">결제하기</button>
+    </div>
+  </body>
+</html>
