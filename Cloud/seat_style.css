@@ -1,9 +1,12 @@
 /* 기본 스타일 */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 
@@ -17,14 +20,15 @@ body {
 }
 
 .header h1 {
-  margin: 0;
-  font-size: 24px;
+  font-size: 34px;
+  margin: 0 0 0 200px;
 }
 
 .header .menu {
   display: flex;
   gap: 15px;
   font-size: 14px;
+  margin-right: 200px;
 }
 
 /* 네비게이션 바 스타일 */
@@ -33,88 +37,121 @@ body {
   justify-content: center;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
+  font-size: 20px;
 }
 
 .navbar a {
-  margin: 0 20px;
+  margin: 0 50px;
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
-
-/* 좌석 선택 영역 스타일 */
-.seat-selection {
+/*인원 선택 바*/
+.count-selection {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* 왼쪽 정렬 */
   margin-top: 20px;
 }
 
 .seat-info {
-  width: 80%;
+  width: 70%;
   background-color: #e0e0e0;
   padding: 10px;
   border-radius: 5px;
+  margin-bottom: 5px;
+  margin: 0 auto 10px; /* 수평 중앙 정렬 */
+}
+.seats-row {
+  display: flex;
+  justify-content: center;
+}
+.age-group {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
 
-.seat-info table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.seat-info th {
-  background-color: #d0d0d0;
-  padding: 5px;
+.age-group label {
+  margin-left: 30px; /* 오른쪽으로 이동 */
+  margin-right: 10px;
+  font-size: 17px;
   font-weight: bold;
+  width: 80px; /* 고정 너비로 정렬 */
 }
-
-.seat-info td {
-  padding: 5px;
+.count {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .movie-time {
   text-align: right;
-  font-size: 14px;
+  font-size: 20px;
+  margin: 0px;
 }
 
 .screen-area {
-  width: 80%;
-  background-color: #d0d0d0;
+  width: 70%;
+  background-color: #e0e0e0;
   padding: 15px;
   border-radius: 5px;
   text-align: center;
   margin-bottom: 10px;
 }
-
 .screen {
   background-color: #ffffff;
   padding: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   font-weight: bold;
   border-radius: 3px;
 }
-
-.seats {
+/* 좌석 선택 영역 스타일 */
+.seat-selection {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  margin-top: 0px;
+}
+/* 좌석 영역 스타일 */
+.seats {
+  display: inline-block;
+  text-align: center;
 }
 
 .seat-row {
   display: flex;
   justify-content: center;
-  gap: 5px;
 }
 
 .seat {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 4px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counted {
+  background-color: #4a90e2;
+  color: black;
+}
+.selected {
+  background-color: gold;
+  color: black;
 }
 
+/* 결제 버튼 스타일 */
 .pay-button {
   background-color: #ccc;
   border: none;
