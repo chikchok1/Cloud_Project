@@ -2,37 +2,47 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Three Sons Cinema</title>
-    <link rel="stylesheet" href="reservation_style.css" />
+    <title>영화 예매 시스템</title>
+    <link rel="stylesheet" href="reservation.css" />
 </head>
 <body>
-    <div class="header"></div>
-        <h1 style="margin-left: 200px">Three Sons Cinema</h1>
-            <div class="menu" style="margin-right: 200px">
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>
-            <a href="#">마이페이지</a>
+    <!-- 상단 메뉴 -->
+    <div class="header">
+        <h1>Three Sons Cinema</h1>
+        <div class="menu">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+          <a href="#">마이페이지</a>
         </div>
-    </div>
-
-  <!-- 네비게이션 바 -->
-    <div class="navbar">
+      </div>
+  
+      <!-- 네비게이션 바 -->
+      <div class="navbar">
         <a href="#">영화</a>
         <a href="#">예매</a>
         <a href="#">매점</a>
         <a href="#">추천</a>
+      </div>
+    <h1>영화 예매 시스템</h1>
+    <div class="category-container">
+        <div class="seleted_category">
+            <h2>영화 선택</h2>
+        </div>
+        <div class="seleted_category">
+            <h2>날짜 선택</h2>
+        </div>
+        <div class="seleted_category">
+            <h2>시간 선택</h2>
+        </div>
     </div>
-    
+
     <div class="container">
         
         <!-- 영화 선택 카테고리 -->
         <div class="category" id="movieSelection">
-            <h2>영화 선택</h2>
-            <div class="underline"></div>
             <table>
                 <tbody>
-                    <tr><td class="movie-list" data-movie="공범(디지털)">공범(디지털)</td></tr>
+                    <tr><td class="movie-list" data-movie="공범(디지털)"><img src="image/12.jpg" alt="12" width="15" height="15">&nbsp;너의 이름은</td></tr>
                     <tr><td class="movie-list" data-movie="그래비티(디지털)">그래비티(디지털)</td></tr>
                     <tr><td class="movie-list" data-movie="롤러코스터">롤러코스터</td></tr>
                     <tr><td class="movie-list" data-movie="밤의여왕(디지털)">밤의여왕(디지털)</td></tr>
@@ -43,8 +53,6 @@
 
         <!-- 날짜 선택 카테고리 -->
         <div class="category" id="dateSelection">
-            <h2>날짜 선택</h2>
-            <div class="underline"></div>
             <h2> 2024/11 </h2>
             <table>
                 <thead>
@@ -80,50 +88,99 @@
             </br>
             <div class="underline"></div>
             <h2>2024/12</h2>
-            <p>선택한 날짜: <span id="selectedDate">없음</span></p>
         </div>
 
         <!-- 시간 선택 카테고리 -->
         <div class="category" id="timeSelection">
-            <h2>시간 선택</h2>
-            <div class="underline"></div>
-            <table>
-                <tbody>
-                    <tr><td class="time-slot" data-time="10:50">10:50</td></tr>
-                    <tr><td class="time-slot" data-time="12:30">12:30</td></tr>
-                    <tr><td class="time-slot" data-time="14:10">14:10</td></tr>
-                    <tr><td class="time-slot" data-time="15:50">15:50</td></tr>
-                    <!-- 추가 시간 슬롯 -->
-                </tbody>
+        
+            <table class="time-table">
+                <!-- 1관 시간 선택 -->
+                <tr>
+                    <td class="screen-name" rowspan="2">1관</td>
+                    <td class="time-slot" data-screen="1관" data-time="10:50">10:50</td>
+                    <td class="time-slot" data-screen="1관" data-time="14:20">14:20</td>
+                    <td class="time-slot" data-screen="1관" data-time="17:10">17:10</td>
+                </tr>
+                <tr>
+                    <td class="time-slot" data-screen="1관" data-time="20:10">20:10</td>
+                </tr>
+        
+                <!-- 상영관 구분선 -->
+                <tr class="divider-row"><td colspan="4"></td></tr>
+        
+                <!-- 2관 시간 선택 -->
+                <tr>
+                    <td class="screen-name" rowspan="2">2관</td>
+                    <td class="time-slot" data-screen="2관" data-time="10:50">10:50</td>
+                    <td class="time-slot" data-screen="2관" data-time="14:20">14:20</td>
+                    <td class="time-slot" data-screen="2관" data-time="17:10">17:10</td>
+                </tr>
+                <tr>
+                    <td class="time-slot" data-screen="2관" data-time="20:10">20:10</td>
+                </tr>
+        
+                <!-- 상영관 구분선 -->
+                <tr class="divider-row"><td colspan="4"></td></tr>
+        
+                <!-- 3관 시간 선택 -->
+                <tr>
+                    <td class="screen-name" rowspan="2">3관</td>
+                    <td class="time-slot" data-screen="3관" data-time="10:50">10:50</td>
+                    <td class="time-slot" data-screen="3관" data-time="14:20">14:20</td>
+                    <td class="time-slot" data-screen="3관" data-time="17:10">17:10</td>
+                </tr>
+                <tr>
+                    <td class="time-slot" data-screen="3관" data-time="20:10">20:10</td>
+                </tr>
             </table>
-        </div>
+        </div>        
+        
+        
+
+    </div>
+    <div id="selectedDetails">
+        <h2>선택한 예매 정보</h2>
+        <p>영화: <span id="selectedMovie">없음</span></p>
+        <p>날짜: <span id="selectedDate">없음</span></p>
+        <p>상영관 및 시간: <span id="selectedScreenAndTime">없음</span></p>
     </div>
 
     <script>
         // JavaScript로 영화 선택 기능 추가
+        // 영화 선택 기능
         document.querySelectorAll('.movie-list').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.movie-list').forEach(el => el.classList.remove('selected'));
                 this.classList.add('selected');
+                // 선택한 영화 업데이트
+                document.getElementById('selectedMovie').textContent = this.getAttribute('data-movie');
             });
         });
 
         // JavaScript로 날짜 선택 기능 추가
         document.querySelectorAll('#dateSelection td[data-date]').forEach(item => {
             item.addEventListener('click', function() {
-                document.querySelectorAll('#dateSelection td').forEach(el => el.classList.remove('selected'));
-                this.classList.add('selected');
-                document.getElementById('selectedDate').textContent = this.getAttribute('data-date');
-            });
+            document.querySelectorAll('#dateSelection td').forEach(el => el.classList.remove('selected'));
+            this.classList.add('selected');
+        
+        // 선택한 날짜 업데이트
+            const selectedDate = this.getAttribute('data-date');
+            document.getElementById('selectedDate').textContent = selectedDate;
         });
+    });
 
         // JavaScript로 시간 선택 기능 추가
         document.querySelectorAll('.time-slot').forEach(item => {
             item.addEventListener('click', function() {
-                document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
+            document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
+            this.classList.add('selected');
+
+        // 선택한 상영관과 시간 업데이트
+            const selectedTime = this.getAttribute('data-time');
+            const selectedScreen = this.getAttribute('data-screen');
+            document.getElementById('selectedScreenAndTime').textContent = `${selectedScreen} - ${selectedTime}`;
+        }); 
+    });
     </script>
 </body>
 </html>
