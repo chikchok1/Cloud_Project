@@ -91,3 +91,23 @@ body {
   font-size: 16px;
   cursor: pointer;
 }
+
+.slider {
+  position: relative;
+  width: 80%; /* 슬라이더 크기 */
+  max-width: 800px; /* 최대 슬라이더 크기 */
+  margin: 20px auto;
+  overflow: hidden; /* 슬라이더 밖의 내용 숨기기 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* 부드러운 슬라이드 효과 */
+}
+
+.slides img {
+  width: 100%; /* 슬라이더 전체 너비에 맞추기 */
+  flex-shrink: 0; /* 이미지 크기 고정 */
+}
