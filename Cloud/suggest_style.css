@@ -94,10 +94,11 @@ body {
 
 .slider {
   position: relative;
-  width: 80%; /* 슬라이더 크기 */
+  width: 100%; /* 슬라이더 크기 */
   max-width: 800px; /* 최대 슬라이더 크기 */
   margin: 20px auto;
   overflow: hidden; /* 슬라이더 밖의 내용 숨기기 */
+  position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -110,4 +111,25 @@ body {
 .slides img {
   width: 100%; /* 슬라이더 전체 너비에 맞추기 */
   flex-shrink: 0; /* 이미지 크기 고정 */
+}
+
+
+.recommendations {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.movie-list li {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
 }

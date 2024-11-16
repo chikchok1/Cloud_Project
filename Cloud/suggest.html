@@ -6,23 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Three Sons Cinema</title>
   <link rel="stylesheet" href="suggest_style.css" />
-  <script>
+  <script>  // 화면슬라이더 JS
     let currentIndex = 0;
 
     function showNextSlide() {
       const slides = document.querySelector(".slides");
       const totalSlides = slides.children.length;
 
-      // 현재 슬라이드 인덱스 업데이트
-      currentIndex = (currentIndex + 1) % totalSlides;
-
       // 슬라이드 이동
       slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // 현재 슬라이드 인덱스 업데이트
+      currentIndex = (currentIndex + 1) % totalSlides;
     }
 
-    // 3초마다 슬라이드 전환
-    setInterval(showNextSlide, 3000);
+    // DOMContentLoaded 이후 슬라이더 작동
+    document.addEventListener("DOMContentLoaded", function () {
+      setInterval(showNextSlide, 3000);
+    });
+  </script>
+  <script>  // 추천영화 리스트 JS
+    const movieData = [
+      { title: "글레디에이터", genre: "action", age: "15", rating: 4, keyword: "액션" },
+      { title: "위키드", genre: "drama", age: "15", rating: 5, keyword: "모험" },
+      { title: "청설", genre: "drama", age: "all", rating: 4, keyword: "웃음" },
+      { title: "사흘", genre: "holor", age: "adult", rating: 4, keyword: "공포" },
+      { title: "히든페이스", genre: "holor", age: "adult", rating: 5, keyword: "공포" },
+    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      // 초기화 버튼 클릭 이벤트
+      document.getElementById("reset").addEventListener("click", function () {
+        document.getElementById("genre").selectedIndex = 0;
+        document.getElementById("age").selectedIndex = 0;
+        document.getElementById("rating").selectedIndex = 0;
+        document.getElementById("keyword").value = "";
+        document.getElementById("movie-list").innerHTML = "";
+      });
 
+      // 검색 버튼 클릭 이벤트
+      document.getElementById("search").addEventListener("click", function () {
+        const genre = document.getElementById("genre").value;
+        const age = document.getElementById("age").value;
+        const rating = document.getElementById("rating").value;
+        const keyword = document.getElementById("keyword").value.trim();
+
+        const movieList = document.getElementById("movie-list");
+        movieList.innerHTML = ""; // 기존 목록 초기화
+
+        // 필터링
+        const filteredMovies = movieData.filter((movie) => {
+          return (
+            (!genre || movie.genre === genre) &&
+            (!age || movie.age === age) &&
+            (!rating || movie.rating >= Number(rating)) &&
+            (!keyword || movie.keyword.includes(keyword))
+          );
+        });
+
+        // 결과 표시
+        if (filteredMovies.length > 0) {
+          filteredMovies.forEach((movie) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${movie.title}`;
+            movieList.appendChild(listItem);
+          });
+        } else {
+          movieList.innerHTML = "<li>추천 영화가 없습니다.</li>";
+        }
+      });
+    });
   </script>
 </head>
 
@@ -46,10 +98,11 @@
   <div class="container">
     <div class="filter-section">
       <select id="genre">
-        <option selected disabled>장르</option>
-        <option>액션</option>
-        <option>코미디</option>
-        <option>드라마</option>
+        <option selected disabled value="">장르</option>
+        <option value="action">액션</option>
+        <option value="comedy">코미디</option>
+        <option value="drama">드라마</option>
+        <option value="holor">호러</option>
         <!-- 추가 장르 선택 옵션 -->
       </select>
       <select id="age">
@@ -75,12 +128,11 @@
     </div>
 
     <div id="recommendations" class="container">
-      <!-- 추천 영화여기에 동적으로 추가-->
-      <link rel="js" href="suggest.js" />
+      <h3>추천 영화</h3>
+      <ul id="movie-list">
+        <!-- 추천 영화 목록이 표시됩니다 -->
+      </ul>
     </div>
-    <!--<div class="image-section">
-        <img src="image/threeson.jpg" alt="Example Image">
-      </div>--> <!-- 여기에 js 구현 -->
   </div>
   <div class="slider">
     <div class="slides">
@@ -91,7 +143,6 @@
       <!-- 더 많은 이미지 추가 -->
     </div>
   </div>
-
 </body>
 
 </html>
