@@ -1,139 +1,153 @@
+/* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 상단 메뉴 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+  margin-left: 200px;
 }
 
-header h1 {
-    font-size: 24px;
+.header .menu {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  margin-right: 200px;
 }
 
-nav {
-    display: flex;
-    gap: 20px;
+/* 네비게이션 바 스타일 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  font-size: 20px;
 }
 
-nav a {
-    text-decoration: none;
-    color: black;
+.navbar a {
+  margin: 0 50px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
-
 .content {
-    padding: 20px;
-    background-color: #f9f9f9; /* 배경색 */
-    border: 1px solid #ddd; /* 테두리 */
-    border-radius: 10px; /* 둥근 모서리 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    max-width: 1200px; /* 최대 너비 제한 */
-    margin: 20px auto; /* 가운데 정렬 */
+  padding: 20px;
+  background-color: #f9f9f9; /* 배경색 */
+  border: 1px solid #ddd; /* 테두리 */
+  border-radius: 10px; /* 둥근 모서리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  max-width: 1200px; /* 최대 너비 제한 */
+  margin: 20px auto; /* 가운데 정렬 */
 }
 
 .content h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center; /* 가운데 정렬 */
-    border-bottom: 2px solid #007BFF; /* 밑줄 효과 */
-    padding-bottom: 10px;
-    display: inline-block;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; /* 가운데 정렬 */
+  border-bottom: 2px solid #007bff; /* 밑줄 효과 */
+  padding-bottom: 10px;
+  display: inline-block;
 }
 
 .movies-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 한 줄에 5개 */
-    column-gap: 3px; /* 양옆 간격 */
-    row-gap: 80px; /* 위아래 간격 */
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 5개 */
+  column-gap: 3px; /* 양옆 간격 */
+  row-gap: 80px; /* 위아래 간격 */
+  gap: 15px;
 }
 
 .movie-card {
-    text-align: center;
-    background-color: #fff; /* 카드 배경 */
-    border: 1px solid #ddd; /* 테두리 */
-    border-radius: 8px; /* 둥근 모서리 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 카드 그림자 */
-    overflow: hidden; /* 이미지가 넘치지 않도록 */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 호버 애니메이션 */
-    position: relative;
-    width: 200px;
-    margin: 10px;
+  text-align: center;
+  background-color: #fff; /* 카드 배경 */
+  border: 1px solid #ddd; /* 테두리 */
+  border-radius: 8px; /* 둥근 모서리 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 카드 그림자 */
+  overflow: hidden; /* 이미지가 넘치지 않도록 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 호버 애니메이션 */
+  position: relative;
+  width: 200px;
+  margin: 10px;
 }
 
 .movie-card:hover {
-    transform: translateY(-5px); /* 살짝 위로 올라감 */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 그림자 확대 */
+  transform: translateY(-5px); /* 살짝 위로 올라감 */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 그림자 확대 */
 }
 
 .movie-title h3 {
-    font-size: 16px;
-    margin: 10px 0;
-    color: #333;
-    text-align: center;
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
 }
 
 .movie-card img {
-    width: 100%; /* 이미지 크기를 줄임 */
-    height: auto; /* 비율 유지 */
-    background-color: #ddd;
-    margin: 0 auto; /* 이미지 가운데 정렬 */
-    
+  width: 100%; /* 이미지 크기를 줄임 */
+  height: auto; /* 비율 유지 */
+  background-color: #ddd;
+  margin: 0 auto; /* 이미지 가운데 정렬 */
 }
 .overlay {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: #f1f1f1; /* 버튼 영역 배경 */
-    border-top: 1px solid #ddd; /* 상단 테두리 */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은 배경 */
-    color: white;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f1f1f1; /* 버튼 영역 배경 */
+  border-top: 1px solid #ddd; /* 상단 테두리 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은 배경 */
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .overlay button {
-    width: 120px; /* 버튼 너비 */
-    height: 40px; /* 버튼 높이 */
-    padding: 10px; /* 버튼 내부 여백 */
-    font-size: 16px; /* 텍스트 크기 */
-    border: none; /* 버튼 테두리 제거 */
-    background-color: #444647; /* 버튼 배경색 */
-    color: white; /* 텍스트 색상 */
-    border-radius: 5px; /* 둥근 모서리 */
-    cursor: pointer; /* 마우스를 올렸을 때 포인터 표시 */
-    margin: 5px; /* 버튼 간격 */
-    transition: background-color 0.3s ease;
+  width: 120px; /* 버튼 너비 */
+  height: 40px; /* 버튼 높이 */
+  padding: 10px; /* 버튼 내부 여백 */
+  font-size: 16px; /* 텍스트 크기 */
+  border: none; /* 버튼 테두리 제거 */
+  background-color: #444647; /* 버튼 배경색 */
+  color: white; /* 텍스트 색상 */
+  border-radius: 5px; /* 둥근 모서리 */
+  cursor: pointer; /* 마우스를 올렸을 때 포인터 표시 */
+  margin: 5px; /* 버튼 간격 */
+  transition: background-color 0.3s ease;
 }
 
 .overlay button:hover {
-    background-color: #0056b3; /* 호버 시 색상 변경 */
+  background-color: #0056b3; /* 호버 시 색상 변경 */
 }
 
 .movie-card:hover .overlay {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .movie-description {
-    margin-bottom: 15px;
-    font-size: 14px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
