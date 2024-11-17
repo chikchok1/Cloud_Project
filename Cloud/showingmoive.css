@@ -18,7 +18,11 @@ body {
   font-size: 34px;
   margin-left: 200px;
 }
-
+.header h1 a {
+  display: block; /* 링크를 블록 요소로 변경 */
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 부모 요소의 색상 유지 */
+}
 .header .menu {
   display: flex;
   gap: 15px;
