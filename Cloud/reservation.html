@@ -10,177 +10,227 @@
     <div class="header">
         <h1>Three Sons Cinema</h1>
         <div class="menu">
-          <a href="#">로그인</a>
-          <a href="#">회원가입</a>
-          <a href="#">마이페이지</a>
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+            <a href="#">마이페이지</a>
         </div>
-      </div>
+    </div>
   
-      <!-- 네비게이션 바 -->
-      <div class="navbar">
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
         <a href="#">영화</a>
         <a href="#">예매</a>
         <a href="#">매점</a>
         <a href="#">추천</a>
-      </div>
-    <h1>영화 예매 시스템</h1>
-    <div class="category-container">
-        <div class="seleted_category">
-            <h2>영화 선택</h2>
-        </div>
-        <div class="seleted_category">
-            <h2>날짜 선택</h2>
-        </div>
-        <div class="seleted_category">
-            <h2>시간 선택</h2>
-        </div>
     </div>
 
     <div class="container">
-        
-        <!-- 영화 선택 카테고리 -->
-        <div class="category" id="movieSelection">
-            <table>
-                <tbody>
-                    <tr><td class="movie-list" data-movie="공범(디지털)"><img src="image/12.jpg" alt="12" width="15" height="15">&nbsp;너의 이름은</td></tr>
-                    <tr><td class="movie-list" data-movie="그래비티(디지털)">그래비티(디지털)</td></tr>
-                    <tr><td class="movie-list" data-movie="롤러코스터">롤러코스터</td></tr>
-                    <tr><td class="movie-list" data-movie="밤의여왕(디지털)">밤의여왕(디지털)</td></tr>
-                    <!-- 추가 영화 리스트 -->
-                </tbody>
-            </table>
+        <div class="container">
+            <!-- 영화 선택 -->
+            <div class="category" id="movieSelection">
+                <table class = "movie-category">
+                    <!-- 카테고리 테이블 -->
+                    <thead>
+                        <tr>
+                            <th>영화 선택</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <!-- 영화 리스트를 감싸는 내부 테이블 -->
+                                <table>
+                                    <tbody>
+                                        <tr><td class="movie-list recommended" data-movie="너의 이름은">
+                                            <img src="image/12.jpg" alt="12" width="15" height="15"> 너의 이름은
+                                        </td></tr>
+                                        <tr><td class="movie-list" data-movie="꽃다발 같은 사랑을 했다">
+                                            <img src="image/12.jpg" alt="12" width="15" height="15"> 꽃다발 같은 사랑을 했다
+                                        </td></tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <!-- 날짜 선택 카테고리 -->
+        <!-- 날짜 선택 -->
         <div class="category" id="dateSelection">
-            <h2> 2024/11 </h2>
-            <table>
+            <table class = "movie-category">
+                <!-- 카테고리 테이블 -->
                 <thead>
                     <tr>
-                        <th class="sunday">일</th>
-                        <th>월</th>
-                        <th>화</th>
-                        <th>수</th>
-                        <th>목</th>
-                        <th class="friday">금</th> <!-- 금요일로 수정 -->
-                        <th class="saturday">토</th>
+                        <th>날짜 선택</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td class="friday" data-date="2024-11-01">1</td><td class="saturday" data-date="2024-11-02">2</td>
-                    </tr>
-                    <tr>
-                        <td class="sunday" data-date="2024-11-03">3</td><td data-date="2024-11-04">4</td><td data-date="2024-11-05">5</td><td data-date="2024-11-06">6</td><td data-date="2024-11-07">7</td><td data-date="2024-11-08">8</td><td class="saturday" data-date="2024-11-09">9</td>
-                    </tr>
-                    <tr>
-                        <td class="sunday" data-date="2024-11-10">10</td><td data-date="2024-11-11">11</td><td data-date="2024-11-12">12</td><td data-date="2024-11-13">13</td><td data-date="2024-11-14">14</td><td data-date="2024-11-15">15</td><td class="saturday" data-date="2024-11-16">16</td>
-                    </tr>
-                    <tr>
-                        <td class="sunday" data-date="2024-11-17">17</td><td data-date="2024-11-18">18</td><td data-date="2024-11-19">19</td><td data-date="2024-11-20">20</td><td data-date="2024-11-21">21</td><td data-date="2024-11-22">22</td><td class="saturday" data-date="2024-11-23">23</td>
-                    </tr>
-                    <tr>
-                        <td class="sunday" data-date="2024-11-24">24</td><td data-date="2024-11-25">25</td><td data-date="2024-11-26">26</td><td data-date="2024-11-27">27</td><td data-date="2024-11-28">28</td><td data-date="2024-11-29">29</td><td class="saturday" data-date="2024-11-30">30</td>
-                    </tr>
-                </tbody>
             </table>
-            <!-- 2024/12 카테고리 추가 -->
-            </br>
-            <div class="underline"></div>
-            <h2>2024/12</h2>
+            <div class="category-date" id="dateSelection2">
+                <table class="calendar">
+                    <thead>
+                        <tr class="calendar-title">
+                            <th colspan="7">2024 / 11</th>
+                        </tr>
+                        <tr class="calendar-title">
+                            <th class="sunday">일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th class="friday">금</th>
+                            <th class="saturday">토</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sunday"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1</td>
+                            <td class="saturday">2</td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td class="saturday">9</td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td class="saturday">16</td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td class="saturday">23</td>
+                        </tr>
+                        <tr class="calendar-bottom">
+                            <td class="sunday">24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td class="saturday">30</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr class="calendar-title">
+                            <th colspan="7">2024 / 12</th>
+                        </tr>
+                        <tr class="calendar-title">
+                            <th class="sunday">일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th class="friday">금</th>
+                            <th class="saturday">토</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sunday">1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td class="saturday">7</td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td class="saturday">14</td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td class="saturday">21</td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td class="saturday">28</td>
+                        </tr>
+                        <tr class="calendar-bottom">
+                            <td class="sunday">29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="saturday"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-        <!-- 시간 선택 카테고리 -->
+        <!-- 시간 선택 -->
         <div class="category" id="timeSelection">
-        
-            <table class="time-table">
-                <!-- 1관 시간 선택 -->
-                <tr>
-                    <td class="screen-name" rowspan="2">1관</td>
-                    <td class="time-slot" data-screen="1관" data-time="10:50">10:50</td>
-                    <td class="time-slot" data-screen="1관" data-time="14:20">14:20</td>
-                    <td class="time-slot" data-screen="1관" data-time="17:10">17:10</td>
-                </tr>
-                <tr>
-                    <td class="time-slot" data-screen="1관" data-time="20:10">20:10</td>
-                </tr>
-        
-                <!-- 상영관 구분선 -->
-                <tr class="divider-row"><td colspan="4"></td></tr>
-        
-                <!-- 2관 시간 선택 -->
-                <tr>
-                    <td class="screen-name" rowspan="2">2관</td>
-                    <td class="time-slot" data-screen="2관" data-time="10:50">10:50</td>
-                    <td class="time-slot" data-screen="2관" data-time="14:20">14:20</td>
-                    <td class="time-slot" data-screen="2관" data-time="17:10">17:10</td>
-                </tr>
-                <tr>
-                    <td class="time-slot" data-screen="2관" data-time="20:10">20:10</td>
-                </tr>
-        
-                <!-- 상영관 구분선 -->
-                <tr class="divider-row"><td colspan="4"></td></tr>
-        
-                <!-- 3관 시간 선택 -->
-                <tr>
-                    <td class="screen-name" rowspan="2">3관</td>
-                    <td class="time-slot" data-screen="3관" data-time="10:50">10:50</td>
-                    <td class="time-slot" data-screen="3관" data-time="14:20">14:20</td>
-                    <td class="time-slot" data-screen="3관" data-time="17:10">17:10</td>
-                </tr>
-                <tr>
-                    <td class="time-slot" data-screen="3관" data-time="20:10">20:10</td>
-                </tr>
+            <table class="movie-category">
+                <!-- 카테고리 테이블 -->
+                <thead>
+                    <tr>
+                        <th>시간 선택</th>
+                    </tr>
+                </thead>
             </table>
-        </div>        
-        
-        
-
-    </div>
-    <div id="selectedDetails">
-        <h2>선택한 예매 정보</h2>
-        <p>영화: <span id="selectedMovie">없음</span></p>
-        <p>날짜: <span id="selectedDate">없음</span></p>
-        <p>상영관 및 시간: <span id="selectedScreenAndTime">없음</span></p>
+        </div>
     </div>
 
     <script>
-        // JavaScript로 영화 선택 기능 추가
         // 영화 선택 기능
         document.querySelectorAll('.movie-list').forEach(item => {
             item.addEventListener('click', function() {
+                // 기존 선택된 항목 스타일 초기화
                 document.querySelectorAll('.movie-list').forEach(el => el.classList.remove('selected'));
+
+                // 현재 클릭한 항목에 선택 스타일 추가
                 this.classList.add('selected');
-                // 선택한 영화 업데이트
-                document.getElementById('selectedMovie').textContent = this.getAttribute('data-movie');
             });
         });
 
-        // JavaScript로 날짜 선택 기능 추가
-        document.querySelectorAll('#dateSelection td[data-date]').forEach(item => {
-            item.addEventListener('click', function() {
-            document.querySelectorAll('#dateSelection td').forEach(el => el.classList.remove('selected'));
-            this.classList.add('selected');
-        
-        // 선택한 날짜 업데이트
-            const selectedDate = this.getAttribute('data-date');
-            document.getElementById('selectedDate').textContent = selectedDate;
+        // 달력 날짜 선택 기능
+        document.querySelectorAll('.calendar td').forEach(cell => {
+            cell.addEventListener('click', function () {
+                // 이미 선택된 날짜의 스타일 초기화
+                document.querySelectorAll('.calendar td').forEach(el => el.classList.remove('selected'));
+
+                // 선택한 셀에 스타일 추가
+                this.classList.add('selected');
+            });
         });
-    });
-
-        // JavaScript로 시간 선택 기능 추가
-        document.querySelectorAll('.time-slot').forEach(item => {
-            item.addEventListener('click', function() {
-            document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
-            this.classList.add('selected');
-
-        // 선택한 상영관과 시간 업데이트
-            const selectedTime = this.getAttribute('data-time');
-            const selectedScreen = this.getAttribute('data-screen');
-            document.getElementById('selectedScreenAndTime').textContent = `${selectedScreen} - ${selectedTime}`;
-        }); 
-    });
     </script>
 </body>
 </html>
+
