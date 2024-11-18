@@ -140,7 +140,6 @@ body {
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
-
 .movie-title {
   color: black;
   padding: 10px;
@@ -180,6 +179,11 @@ body {
   font-size: 14px;
   cursor: pointer;
   color: black;
+}
+.overlay button a {
+  display: block; /* 링크를 블록 요소로 변경 */
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 부모 요소의 색상 유지 */
 }
 .overlay button:first-child {
   background-color: white; /* 투명한 흰색 */

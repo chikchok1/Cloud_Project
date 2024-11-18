@@ -1,0 +1,127 @@
+/* 기본 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 상단 메뉴 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+  margin-left: 200px;
+}
+
+.header h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header .menu {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  margin-right: 200px;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.navbar a {
+  margin: 0 50px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* 영화 정보 섹션 스타일 */
+.movie-section {
+  display: flex;
+  padding: 20px 200px;
+  gap: 20px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.movie-section img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-info {
+  flex: 1;
+}
+
+.movie-info h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.movie-info .tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.movie-info .tags span {
+  font-size: 14px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+/* 영화 설명을 이미지 왼쪽 열과 맞추기 */
+.movie-description {
+  width: calc(
+    100% - 240px
+  ); /* 이미지 너비와 여백을 고려하여 영화 설명 너비 설정 */
+  font-size: 16px;
+  line-height: 1.8;
+  position: absolute;
+  left: 200px; /* 이미지의 오른쪽과 맞춰지도록 위치 설정 */
+}
+
+.movie-description p {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+}
+
+.buttons .reserve {
+  background-color: red;
+}
