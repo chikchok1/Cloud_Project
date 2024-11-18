@@ -70,7 +70,7 @@
                     </tr>
                 </thead>
             </table>
-            <div class="category-date" id="dateSelection2">
+            <div class="category-date hidden" id="dateSelection2">
                 <table class="calendar" data-month="2024 / 11">
                     <thead>
                         <tr class="calendar-title">
@@ -208,7 +208,7 @@
                     </tr>
                 </thead>
             </table>
-            <div class="category-time" id="timeSelection2">
+            <div class="category-time hidden" id="timeSelection2">
                 <table class="movie-category">
                     <!-- 카테고리 제목 -->
                     <tbody>
@@ -415,11 +415,18 @@
                 } else {
                     selectedMoviePoster = "image/default.jpg"; // 기본 이미지
                 }
+
+                // 날짜 선택 섹션 표시
+                document.getElementById('dateSelection2').classList.remove('hidden');
+                // 시간 선택 섹션 숨기기
+                document.getElementById('timeSelection2').classList.add('hidden');
+
                 updateSummary();
             });
         });
+
         // 날짜 선택 이벤트
-        document.querySelectorAll('.calendar td').forEach(cell => {
+        document.querySelectorAll('#dateSelection2 .calendar td').forEach(cell => {
             cell.addEventListener('click', function () {
                 // 클릭된 날짜 셀의 부모 달력을 찾기
                 const parentCalendar = this.closest('.calendar');
@@ -438,6 +445,9 @@
                 } else {
                     selectedDay = null; // 유효하지 않은 경우 초기화
                 }
+
+                // 시간 선택 섹션 표시
+                document.getElementById('timeSelection2').classList.remove('hidden');
 
                 updateSummary();
             });
