@@ -1,181 +1,195 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Three Sons Cinema</title>
-    <link rel="stylesheet" href="suggest_style.css" />
-    <script>
-      // 화면슬라이더 JS
-      let currentIndex = 0;
 
-      function showNextSlide() {
-        const slides = document.querySelector(".slides");
-        const totalSlides = slides.children.length;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three Sons Cinema</title>
+  <link rel="stylesheet" href="suggest_style.css" />
+  <script>
+    // 화면슬라이더 JS
+    let currentIndex = 0;
 
-        // 슬라이드 이동
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function showNextSlide() {
+      const slides = document.querySelector(".slides");
+      const totalSlides = slides.children.length;
 
-        // 현재 슬라이드 인덱스 업데이트
-        currentIndex = (currentIndex + 1) % totalSlides;
-      }
+      // 슬라이드 이동
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      // DOMContentLoaded 이후 슬라이더 작동
-      document.addEventListener("DOMContentLoaded", function () {
-        setInterval(showNextSlide, 3000);
+      // 현재 슬라이드 인덱스 업데이트
+      currentIndex = (currentIndex + 1) % totalSlides;
+    }
+
+    // DOMContentLoaded 이후 슬라이더 작동
+    document.addEventListener("DOMContentLoaded", function () {
+      setInterval(showNextSlide, 3000);
+    });
+  </script>
+  <script>
+    // 추천영화 리스트 JS
+    const movieData = [
+      {
+        title: "글레디에이터",
+        genre: "action",
+        age: "15",
+        rating: 4,
+        keyword: "액션",
+      },
+      {
+        title: "위키드",
+        genre: "drama",
+        age: "15",
+        rating: 5,
+        keyword: "모험",
+      },
+      {
+        title: "청설",
+        genre: "drama",
+        age: "all",
+        rating: 4,
+        keyword: "웃음",
+      },
+      {
+        title: "사흘",
+        genre: "holor",
+        age: "adult",
+        rating: 4,
+        keyword: "공포",
+      },
+      {
+        title: "히든페이스",
+        genre: "holor",
+        age: "adult",
+        rating: 5,
+        keyword: "공포",
+      },
+    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      // 초기화 버튼 클릭 이벤트
+      document.getElementById("reset").addEventListener("click", function () {
+        document.getElementById("genre").selectedIndex = 0;
+        document.getElementById("age").selectedIndex = 0;
+        document.getElementById("rating").selectedIndex = 0;
+        document.getElementById("keyword").value = "";
+        document.getElementById("movie-list").innerHTML = "";
       });
-    </script>
-    <script>
-      // 추천영화 리스트 JS
-      const movieData = [
-        {
-          title: "글레디에이터",
-          genre: "action",
-          age: "15",
-          rating: 4,
-          keyword: "액션",
-        },
-        {
-          title: "위키드",
-          genre: "drama",
-          age: "15",
-          rating: 5,
-          keyword: "모험",
-        },
-        {
-          title: "청설",
-          genre: "drama",
-          age: "all",
-          rating: 4,
-          keyword: "웃음",
-        },
-        {
-          title: "사흘",
-          genre: "holor",
-          age: "adult",
-          rating: 4,
-          keyword: "공포",
-        },
-        {
-          title: "히든페이스",
-          genre: "holor",
-          age: "adult",
-          rating: 5,
-          keyword: "공포",
-        },
-      ];
-      document.addEventListener("DOMContentLoaded", function () {
-        // 초기화 버튼 클릭 이벤트
-        document.getElementById("reset").addEventListener("click", function () {
-          document.getElementById("genre").selectedIndex = 0;
-          document.getElementById("age").selectedIndex = 0;
-          document.getElementById("rating").selectedIndex = 0;
-          document.getElementById("keyword").value = "";
-          document.getElementById("movie-list").innerHTML = "";
+
+      // 검색 버튼 클릭 이벤트
+      document.getElementById("search").addEventListener("click", function () {
+        const genre = document.getElementById("genre").value;
+        const age = document.getElementById("age").value;
+        const rating = document.getElementById("rating").value;
+        const keyword = document.getElementById("keyword").value.trim();
+
+        const movieList = document.getElementById("movie-list");
+        movieList.innerHTML = ""; // 기존 목록 초기화
+
+        // 필터링
+        const filteredMovies = movieData.filter((movie) => {
+          return (
+            (!genre || movie.genre === genre) &&
+            (!age || movie.age === age) &&
+            (!rating || movie.rating >= Number(rating)) &&
+            (!keyword || movie.keyword.includes(keyword))
+          );
         });
 
-        // 검색 버튼 클릭 이벤트
-        document
-          .getElementById("search")
-          .addEventListener("click", function () {
-            const genre = document.getElementById("genre").value;
-            const age = document.getElementById("age").value;
-            const rating = document.getElementById("rating").value;
-            const keyword = document.getElementById("keyword").value.trim();
+        // 결과 표시
+        if (filteredMovies.length > 0) {
+          filteredMovies.forEach((movie) => {
+            const listItem = document.createElement("li");
 
-            const movieList = document.getElementById("movie-list");
-            movieList.innerHTML = ""; // 기존 목록 초기화
+            // 이미지 태그 생성
+            const img = document.createElement("img");
+            img.src = movie.poster; // 포스터 경로
+            img.alt = movie.title;
+            img.style.width = "100px"; // 이미지 크기 조정
+            img.style.height = "150px";
 
-            // 필터링
-            const filteredMovies = movieData.filter((movie) => {
-              return (
-                (!genre || movie.genre === genre) &&
-                (!age || movie.age === age) &&
-                (!rating || movie.rating >= Number(rating)) &&
-                (!keyword || movie.keyword.includes(keyword))
-              );
-            });
+            // 영화 제목 추가
+            const title = document.createElement("p");
+            title.textContent = movie.title;
 
-            // 결과 표시
-            if (filteredMovies.length > 0) {
-              filteredMovies.forEach((movie) => {
-                const listItem = document.createElement("li");
-                listItem.textContent = `${movie.title}`;
-                movieList.appendChild(listItem);
-              });
-            } else {
-              movieList.innerHTML = "<li>추천 영화가 없습니다.</li>";
-            }
+            // 리스트 아이템에 추가
+            listItem.appendChild(img);
+            listItem.appendChild(title);
+            movieList.appendChild(listItem);
           });
+        } else {
+          movieList.innerHTML = "<li>추천 영화가 없습니다.</li>";
+        }
       });
-    </script>
-  </head>
+    });
+  </script>
+</head>
 
-  <body>
-    <div class="header">
-      <h1><a href="index.html">Three Sons Cinema</a></h1>
-      <div class="menu">
-        <a href="login.html">로그인</a>
-        <a href="#">회원가입</a>
-        <a href="#">마이페이지</a>
+<body>
+  <div class="header">
+    <h1><a href="index.html">Three Sons Cinema</a></h1>
+    <div class="menu">
+      <a href="login.html">로그인</a>
+      <a href="#">회원가입</a>
+      <a href="#">마이페이지</a>
+    </div>
+  </div>
+
+  <!-- 네비게이션 바 -->
+  <div class="navbar">
+    <a href="showingmoive.html">영화</a>
+    <a href="#">예매</a>
+    <a href="#">매점</a>
+    <a href="suggest.html">추천</a>
+  </div>
+  <div class="container">
+    <div class="filter-section">
+      <select id="genre">
+        <option selected disabled value="">장르</option>
+        <option value="action">액션</option>
+        <option value="comedy">코미디</option>
+        <option value="drama">드라마</option>
+        <option value="holor">호러</option>
+        <!-- 추가 장르 선택 옵션 -->
+      </select>
+      <select id="age">
+        <option selected disabled>나이제한</option>
+        <!-- 고정값-->
+        <option>전체관람가</option>
+        <option>12세 이상</option>
+        <option>15세 이상</option>
+        <option>청소년 관람불가</option>
+      </select>
+      <select id="rating">
+        <option selected disabled>별점수</option>
+        <option>★5.0</option>
+        <option>★4.0</option>
+        <option>★3.0</option>
+        <option>★2.0</option>
+        <option>★1.0</option>
+      </select>
+      <input type="text" id="keyword" placeholder="검색 키워드" />
+      <div class="search-btn">
+        <button id="reset">초기화</button>
+        <button id="search">검색</button>
       </div>
     </div>
 
-    <!-- 네비게이션 바 -->
-    <div class="navbar">
-      <a href="showingmoive.html">영화</a>
-      <a href="#">예매</a>
-      <a href="#">매점</a>
-      <a href="suggest.html">추천</a>
+    <div id="recommendations" class="container">
+      <h3>추천 영화</h3>
+      <ul id="movie-list">
+        <!-- 추천 영화 목록이 표시됩니다 -->
+      </ul>
     </div>
-    <div class="container">
-      <div class="filter-section">
-        <select id="genre">
-          <option selected disabled value="">장르</option>
-          <option value="action">액션</option>
-          <option value="comedy">코미디</option>
-          <option value="drama">드라마</option>
-          <option value="holor">호러</option>
-          <!-- 추가 장르 선택 옵션 -->
-        </select>
-        <select id="age">
-          <option selected disabled>나이제한</option>
-          <!-- 고정값-->
-          <option>전체관람가</option>
-          <option>12세 이상</option>
-          <option>15세 이상</option>
-          <option>청소년 관람불가</option>
-        </select>
-        <select id="rating">
-          <option selected disabled>별점수</option>
-          <option>★5.0</option>
-          <option>★4.0</option>
-          <option>★3.0</option>
-          <option>★2.0</option>
-          <option>★1.0</option>
-        </select>
-        <input type="text" id="keyword" placeholder="검색 키워드" />
-        <div class="search-btn">
-          <button id="reset">초기화</button>
-          <button id="search">검색</button>
-        </div>
-      </div>
-
-      <div id="recommendations" class="container">
-        <h3>추천 영화</h3>
-        <ul id="movie-list">
-          <!-- 추천 영화 목록이 표시됩니다 -->
-        </ul>
-      </div>
-    </div>
-    <div class="slider">
+  </div>
+  <!--<div class="slider">
       <div class="slides">
         <img src="image/threeson.jpg" alt="Photo 1" />
         <img src="image/threeson1.jpg" alt="Photo 2" />
         <img src="image/threeson2.jpg" alt="Photo 3" />
         <img src="image/threeson3.jpg" alt="Photo 4" />
-        <!-- 더 많은 이미지 추가 -->
+         더 많은 이미지 추가
       </div>
-    </div>
-  </body>
+    </div>-->
+</body>
+
 </html>

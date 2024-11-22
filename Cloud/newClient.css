@@ -1,0 +1,125 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* 상단 메뉴 스타일 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+    margin-left: 200px;
+}
+
+.header h1 a {
+    display: block;
+    /* 링크를 블록 요소로 변경 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 부모 요소의 색상 유지 */
+}
+
+.header .menu {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    margin-right: 200px;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.navbar a {
+    margin: 0 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #272727;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #353535;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #353535;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #464646;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

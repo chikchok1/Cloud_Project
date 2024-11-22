@@ -18,11 +18,16 @@ body {
   font-size: 34px;
   margin-left: 200px;
 }
+
 .header h1 a {
-  display: block; /* 링크를 블록 요소로 변경 */
-  text-decoration: none; /* 밑줄 제거 */
-  color: inherit; /* 부모 요소의 색상 유지 */
+  display: block;
+  /* 링크를 블록 요소로 변경 */
+  text-decoration: none;
+  /* 밑줄 제거 */
+  color: inherit;
+  /* 부모 요소의 색상 유지 */
 }
+
 .header .menu {
   display: flex;
   gap: 15px;
@@ -98,10 +103,13 @@ body {
 
 .slider {
   position: relative;
-  width: 100%; /* 슬라이더 크기 */
-  max-width: 800px; /* 최대 슬라이더 크기 */
+  width: 100%;
+  /* 슬라이더 크기 */
+  max-width: 800px;
+  /* 최대 슬라이더 크기 */
   margin: 20px auto;
-  overflow: hidden; /* 슬라이더 밖의 내용 숨기기 */
+  overflow: hidden;
+  /* 슬라이더 밖의 내용 숨기기 */
   position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -109,12 +117,15 @@ body {
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* 부드러운 슬라이드 효과 */
+  transition: transform 0.5s ease-in-out;
+  /* 부드러운 슬라이드 효과 */
 }
 
 .slides img {
-  width: 100%; /* 슬라이더 전체 너비에 맞추기 */
-  flex-shrink: 0; /* 이미지 크기 고정 */
+  width: 100%;
+  /* 슬라이더 전체 너비에 맞추기 */
+  flex-shrink: 0;
+  /* 이미지 크기 고정 */
 }
 
 .recommendations {
@@ -125,14 +136,21 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.movie-list {
-  list-style-type: none;
+#movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.movie-list li {
-  margin: 5px 0;
-  font-size: 18px;
-  font-weight: bold;
+#movie-list li {
+  text-align: center;
+  flex: 0 0 120px;
+  /* 카드 크기 설정 */
+}
+
+#movie-list img {
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
