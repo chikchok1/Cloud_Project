@@ -32,6 +32,10 @@ body {
   font-size: 14px;
   margin-right: 200px; /* 메뉴 우측 여백 */
 }
+.header .menu a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 링크 기본 색상 설정 */
+}
 
 /* 네비게이션 바 스타일 */
 .navbar {
