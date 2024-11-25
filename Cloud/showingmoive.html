@@ -1,237 +1,251 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Sons Cinema</title>
+    <link rel="stylesheet" href="showingmoive.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Three Sons Cinema</title>
-  <link rel="stylesheet" href="showingmoive.css" />
-</head>
-
-<body>
-  <!-- 상단 메뉴 -->
-  <div class="header">
-    <h1><a href="index.html">Three Sons Cinema</a></h1>
-    <div class="menu">
-      <a href="login.html">로그인</a>
-      <a href="newClient.html">회원가입</a>
-      <a href="#">마이페이지</a>
+  <body>
+    <!-- 상단 메뉴 -->
+    <div class="header">
+      <h1><a href="index.html">Three Sons Cinema</a></h1>
+      <div class="menu">
+        <a href="login.html">로그인</a>
+        <a href="newClient.html">회원가입</a>
+        <a href="#">마이페이지</a>
+      </div>
     </div>
-  </div>
 
-  <!-- 네비게이션 바 -->
-  <div class="navbar">
-    <a href="showingmoive.html">영화</a>
-    <a href="reservation.html">예매</a>
-    <a href="food_combo.html">매점</a>
-    <a href="suggest.html">추천</a>
-  </div>
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+      <a href="showingmoive.html">영화</a>
+      <a href="reservation.html">예매</a>
+      <a href="food_combo.html">매점</a>
+      <a href="suggest.html">추천</a>
+    </div>
 
-  <div class="movies">
-    <!-- 사흘 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/four.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            이 영화는 3일간의 강렬한 이야기를 다루는데...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+    <div class="movies">
+      <!-- 영화 카드: 사흘 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/four.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              이 영화는 3일간의 강렬한 이야기를 다루는데...
+            </p>
+            <button>
+              <a href="View_details/four.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong>사흘<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong>사흘<br /></strong>
-      </div>
-    </div>
 
-    <!-- 글래디에이터 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/glady.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            고대 로마 제국에서 배신당한 장군이 처참한 운명 속에서 복수를
-            다짐하는데...
-          </p>
-          <button>
-            <a href="View_details/glady.html" target="_blank">상세보기</a>
-          </button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 글래디에이터 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/glady.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              고대 로마 제국에서 배신당한 장군이 처참한 운명 속에서 복수를
+              다짐하는데...
+            </p>
+            <button>
+              <a href="View_details/glady.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong>글래디 에이터<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong>글래디 에이터<br /></strong>
-      </div>
-    </div>
 
-    <!--히든페이스 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/hidden.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            유명 뮤지컬 배우가 감춰진 비밀을 펼치며 과거의 범죄를
-            파해치는데...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 히든페이스 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/hidden.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              유명 뮤지컬 배우가 감춰진 비밀을 펼치며 과거의 범죄를
+              파해치는데...
+            </p>
+            <button>
+              <a href="View_details/hidden.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong>히든페이스<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong>히든페이스<br /></strong>
-      </div>
-    </div>
 
-    <!--청설 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/sul.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            한 남자가 과거의 상처를 치유하고 새로운 삶을 찾기 위해 떠나는데...
-          </p>
-          <button>
-            <a href="View_details/chungsul.html" target="_blank">상세보기</a>
-          </button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 청설 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/sul.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              한 남자가 과거의 상처를 치유하고 새로운 삶을 찾기 위해 떠나는데...
+            </p>
+            <button>
+              <a href="View_details/chungsul.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong>청설<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong>청설<br /></strong>
-      </div>
-    </div>
 
-    <!--위키드 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/wikid.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            이 영화는 3일간의 강렬한 이야기를 다룹니다.
-          </p>
-          <button>
-            <a href="View_details/wikid.html" target="_blank">상세보기</a>
-          </button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 위키드 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/wikid.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              이 영화는 3일간의 강렬한 이야기를 다룹니다.
+            </p>
+            <button>
+              <a href="View_details/wikid.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong>위키드<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong>위키드<br /></strong>
-      </div>
-    </div>
 
-    <!--코난 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/conan.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            코난은 또 다시 문제를 해결할 수 있을까...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 코난 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/conan.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              코난은 또 다시 문제를 해결할 수 있을까...
+            </p>
+            <button>
+              <a href="View_details/conan.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong> 코난 극장판<br />: 11번째 스트라이커<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong> 코난 극장판<br />: 11번째 스트라이커<br /></strong>
-      </div>
-    </div>
 
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/dooropen.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            문을 도대체 어떻게 연다는 걸까
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/guical.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              그 칼로 악몽을 끊어라! 마음을 불태워라
+            </p>
+            <button>
+              <a href="View_details/guical.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
+        </div>
+        <div class="movie-title">
+          <strong>극장판 귀멸의 칼날<br />: 무한열차편<br /></strong>
         </div>
       </div>
-      <div class="movie-title">
-        <strong>문을 여는 법<br /></strong>
-      </div>
-    </div>
 
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/caerol.jpeg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            징글벨 징글벨
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/caerol.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">징글벨 징글벨</p>
+            <button>
+              <a href="View_details/caerol.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
         </div>
+        <div class="movie-title"><strong> 캐롤</strong><br /></div>
       </div>
-      <div class="movie-title">
-        <strong> 캐롤</strong><br />
-      </div>
-    </div>
 
-    <!--  노트북 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/notebook.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            두 사람의 격렬한 사랑과 이별을 거쳐, 시간이 흐른 후에도 변함이
-            궁금해지는데...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <!--  노트북 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/notebook.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              두 사람의 격렬한 사랑과 이별을 거쳐, 시간이 흐른 후에도 변함이
+              궁금해지는데...
+            </p>
+            <button>
+              <a href="View_details/notebook.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
         </div>
+        <div class="movie-title"><strong>노트북</strong><br /></div>
       </div>
-      <div class="movie-title"><strong>노트북</strong><br /></div>
-    </div>
 
-    <!-- 영화 카드: 남자가 사랑할 때 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/manlovewoman.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            황정민은 아픈 와중에도 김혜진을 끝까지 좋아하게되는데...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 남자가 사랑할 때 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/manlovewoman.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              황정민은 아픈 와중에도 김혜진을 끝까지 좋아하게되는데...
+            </p>
+            <button>
+              <a href="View_details/manlove.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
         </div>
+        <div class="movie-title"><strong>남자가 사랑할 때</strong><br /></div>
       </div>
-      <div class="movie-title"><strong>남자가 사랑할 때</strong><br /></div>
-    </div>
 
-    <!-- 영화 카드: 베테랑 2 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/vaetaerang.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            과거의 악당들과 재대결을 벌이게 되는데 승자는...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 베테랑 2 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/vaetaerang.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              과거의 악당들과 재대결을 벌이게 되는데 승자는...
+            </p>
+            <button>
+              <a href="View_details/vaetaerang.html" target="_blank"
+                >상세보기</a
+              >
+            </button>
+            <button>예매하기</button>
+          </div>
         </div>
+        <div class="movie-title"><strong>베테랑 2</strong><br /></div>
       </div>
-      <div class="movie-title"><strong>베테랑 2</strong><br /></div>
-    </div>
 
-    <!-- 영화 카드: 기생충 -->
-    <div class="movie-container">
-      <div class="movie-card">
-        <img src="image/gisaengchung.jpg" alt="영화 사진" />
-        <div class="overlay">
-          <p class="movie-description">
-            기생충처럼 부자집에 몰래 얹혀사는 기우네 가족들 어떻게 될
-            것인가...
-          </p>
-          <button>상세보기</button>
-          <button>예매하기</button>
+      <!-- 영화 카드: 기생충 -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="image/gisaengchung.jpg" alt="영화 사진" />
+          <div class="overlay">
+            <p class="movie-description">
+              기생충처럼 부자집에 몰래 얹혀사는 기우네 가족들 어떻게 될
+              것인가...
+            </p>
+            <button>
+              <a href="View_details/gisaeng.html" target="_blank">상세보기</a>
+            </button>
+            <button>예매하기</button>
+          </div>
         </div>
+        <div class="movie-title"><strong>기생충</strong><br /></div>
       </div>
-      <div class="movie-title"><strong>기생충</strong><br /></div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
