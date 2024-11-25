@@ -387,3 +387,14 @@ td {
   text-align: center; /* 셀 내용을 가로 중앙 정렬 */
   vertical-align: middle; /* 셀 내용을 세로 중앙 정렬 */
 }
+
+.title h1 {
+  text-align: left; /* 왼쪽 정렬 */
+  margin-left: 400px; /* 필요하면 여백 조정 */
+}
+
+.title hr{
+  width: 60%; /* hr 길이 조정 */
+  margin: 10px auto; /* 상하 여백 및 가운데 정렬 */
+  border: 1px solid #040404; /* 테두리 스타일 */
+}

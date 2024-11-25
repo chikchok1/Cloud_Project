@@ -1,0 +1,183 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif; /* 폰트 설정 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+  
+  /* 상단 메뉴 스타일 */
+  .header {
+    display: flex; /* 플렉스 박스를 사용해 정렬 */
+    justify-content: space-between; /* 양쪽 정렬 */
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd; /* 하단 구분선 */
+  }
+
+  
+  .header h1 {
+    margin: 0; /* 기본 여백 제거 */
+    font-size: 34px;
+    margin-left: 200px; /* 제목 좌측 여백 */
+  }
+  
+  .header .menu {
+    display: flex; /* 플렉스 박스 정렬 */
+    gap: 15px; /* 각 메뉴 간격 */
+    font-size: 14px;
+    margin-right: 200px; /* 메뉴 우측 여백 */
+  }
+  
+  /* 네비게이션 바 스타일 */
+  .navbar {
+    display: flex; /* 플렉스 박스 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    border-bottom: 1px solid #ddd; /* 하단 구분선 */
+    padding: 10px 0;
+    font-size: 20px; /* 텍스트 크기 */
+  }
+  
+  .navbar a {
+    margin: 0 50px; /* 양쪽 여백 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: black; /* 글자 색상 */
+    font-weight: bold; /* 글자 굵기 */
+  }
+
+  .title h1 {
+    text-align: left; /* 왼쪽 정렬 */
+    margin-left: 400px; /* 필요하면 여백 조정 */
+}
+
+.title hr{
+    width: 60%; /* hr 길이 조정 */
+    margin: 10px auto; /* 상하 여백 및 가운데 정렬 */
+    border: 1px solid #040404; /* 테두리 스타일 */
+}
+
+.menu-bar hr, .menu-title hr {
+    width: 60%; /* hr 길이 조정 */
+    margin: 10px auto; /* 상하 여백 및 가운데 정렬 */
+    border: 1px solid #ddd; /* 테두리 스타일 */
+}
+
+.content {
+    padding: 20px;
+    border: none;
+    max-width: 1000px; /* 최대 너비 제한 */
+    margin: 20px auto; /* 가운데 정렬 */
+  }
+
+.categories {
+    text-align: left;
+    margin-left: 400px; /* 필요하면 여백 조정 */
+}
+
+.categories a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 50px; /* 오른쪽 간격 설정 */
+}
+
+.categories a:visited {
+    color: black; /* 방문한 링크 색상 */
+}
+
+.menu-title h1 {
+    text-align: left; /*왼쪽 정렬 */
+    margin-left: 400px; /* 필요하면 여백 조정 */
+}
+
+.menu-title .subtitle {
+    font-size: 20px; /* 작은 글씨 크기 */
+    font-weight: normal; /* 가벼운 글씨 */
+    margin-left: 10px; /* 콤보와 문구 사이 간격 */
+}
+
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 5개 */
+    column-gap: 3px; /* 양옆 간격 */
+    row-gap: 80px; /* 위아래 간격 */
+    gap: 15px;
+  }
+
+  .list-card {
+    text-align: center;
+    background-color: #fff; /* 카드 배경 */
+    border: 1px solid #ddd; /* 테두리 */
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 카드 그림자 */
+    overflow: hidden; /* 이미지가 넘치지 않도록 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 호버 애니메이션 */
+    position: relative;
+    width: 200px;
+    margin: 10px;
+  }
+  
+  .list-card:hover {
+    transform: translateY(-5px); /* 살짝 위로 올라감 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 그림자 확대 */
+  }
+
+  .list-card img {
+    width: 100%; /* 이미지 크기를 줄임 */
+    height: auto; /* 비율 유지 */
+    background-color: #ddd;
+    margin: 0 auto; /* 이미지 가운데 정렬 */
+  }
+
+  .overlay {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f1f1f1; /* 버튼 영역 배경 */
+    border-top: 1px solid #ddd; /* 상단 테두리 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은 배경 */
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .overlay button {
+    width: 120px; /* 버튼 너비 */
+    height: 40px; /* 버튼 높이 */
+    padding: 10px; /* 버튼 내부 여백 */
+    font-size: 16px; /* 텍스트 크기 */
+    border: none; /* 버튼 테두리 제거 */
+    background-color: #444647; /* 버튼 배경색 */
+    color: white; /* 텍스트 색상 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 마우스를 올렸을 때 포인터 표시 */
+    margin: 5px; /* 버튼 간격 */
+    transition: background-color 0.3s ease;
+  }
+  
+  .overlay button:hover {
+    background-color: #0056b3; /* 호버 시 색상 변경 */
+  }
+  
+
+  .movie-card:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .movie-description {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
