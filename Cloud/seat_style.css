@@ -4,9 +4,10 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Tahoma", "돋움", dotum, Nanum Gothic, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: whitesmoke;
 }
 
 /* 상단 메뉴 스타일 */
@@ -22,9 +23,9 @@ body {
   margin: 0 0 0 200px;
 }
 .header h1 a {
-  display: block; /* 링크를 블록 요소로 변경 */
-  text-decoration: none; /* 밑줄 제거 */
-  color: inherit; /* 부모 요소의 색상 유지 */
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .header .menu {
@@ -33,7 +34,14 @@ body {
   font-size: 14px;
   margin-right: 200px;
 }
+.header .menu a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 링크 기본 색상 설정 */
+}
 
+.header .menu a:hover {
+  color: red; /* 마우스 오버 시 색상 변경 (선택 사항) */
+}
 /* 네비게이션 바 스타일 */
 .navbar {
   display: flex;
@@ -49,51 +57,88 @@ body {
   color: black;
   font-weight: bold;
 }
-/*인원 선택 바*/
+
+/* 인원 선택 바 */
 .count-selection {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 왼쪽 정렬 */
+  align-items: center;
   margin-top: 20px;
 }
 
 .seat-info {
+  display: flex;
+  align-items: center;
   width: 70%;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 10px;
   border-radius: 2px;
-  margin-bottom: 5px;
-  margin: 0 auto 10px; /* 수평 중앙 정렬 */
+  margin: 0 auto;
 }
-.seats-row {
+
+.age-groups {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  flex: 1; /* 적정 공간 배분 */
+  margin: 0;
+  width: auto;
 }
+
+.vertical-divider {
+  width: 2px;
+  background-color: #ddd;
+  height: 100%;
+  min-height: 150px;
+  margin: 0 10px;
+  display: block;
+}
+
+.date-display {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+  flex: 1;
+}
+
 .age-group {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 5px;
+  padding-left: 30px;
 }
 
 .age-group label {
-  margin-left: 30px; /* 오른쪽으로 이동 */
-  margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
   font-size: 17px;
   font-weight: bold;
-  width: 80px; /* 고정 너비로 정렬 */
+  width: 80px; /* 고정 너비로 통일 */
+  text-align: left;
 }
+
+.seats-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px; /* 버튼 간격 일정 */
+}
+
 .count {
   width: 25px;
   height: 25px;
   background-color: white;
-  border: 1px solid white;
+  border: 1px solid rgb(206, 196, 196);
   border-radius: 2px;
-  margin: 2px;
+  margin: 0; /* 버튼 간격은 gap으로 처리 */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .movie-time {
   text-align: right;
   font-size: 20px;
@@ -102,18 +147,22 @@ body {
 
 .screen-area {
   width: 70%;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 15px;
   border-radius: 2px;
   text-align: center;
   margin-bottom: 10px;
+  border-top: 1px solid #ddd; /* 상단에 구분선 추가 */
 }
 .screen {
-  background-color: #ffffff;
-  padding: 8px;
+  background-color: #cccccc7a;
+  padding: px;
   margin-bottom: 35px;
   font-weight: bold;
   border-radius: 2px;
+  width: 70%; /* 스크린의 가로 크기를 줄임 */
+  margin: 0 auto; /* 화면 중앙 정렬 */
+  margin-bottom: 40px;
 }
 /* 좌석 선택 영역 스타일 */
 .seat-selection {
@@ -122,6 +171,7 @@ body {
   align-items: center;
   margin-top: 0px;
 }
+
 /* 좌석 영역 스타일 */
 .seats {
   display: inline-block;
@@ -130,28 +180,38 @@ body {
 
 .seat-row {
   display: flex;
+  align-items: center; /* 행 라벨과 좌석을 중앙 정렬 */
   justify-content: center;
+}
+
+/* 행 라벨 스타일 */
+.row-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px; /* 좌석과의 간격 */
+  width: 20px; /* 일정한 너비 */
+  text-align: center;
 }
 
 .seat {
   width: 35px;
   height: 35px;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  margin: 4px;
+  background-color: #fff;
+  border: 1px solid rgb(206, 196, 196);
+  border-radius: 2px;
+  margin: 1px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .counted {
-  background-color: #4a90e2;
-  color: black;
+  background-color: black;
+  color: white;
 }
 .selected {
-  background-color: gold;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 /* 결제 버튼 스타일 */

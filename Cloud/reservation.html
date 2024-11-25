@@ -1,571 +1,692 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>영화 예매 시스템</title>
     <link rel="stylesheet" href="reservation.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!-- 상단 메뉴 -->
     <div class="header">
-        <h1>Three Sons Cinema</h1>
-        <div class="menu">
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>
-            <a href="#">마이페이지</a>
-        </div>
-    </div>
-  
-    <!-- 네비게이션 바 -->
-    <div class="navbar">
-        <a href="#">영화</a>
-        <a href="#">예매</a>
-        <a href="#">매점</a>
-        <a href="#">추천</a>
+      <h1><a href="index.html">Three Sons Cinema</a></h1>
+      <div class="menu">
+        <a href="login.html">로그인</a>
+        <a href="newClient.htmls">회원가입</a>
+        <a href="#">마이페이지</a>
+      </div>
     </div>
 
-    <div class = "title">
-        <h1>영화예매</h1>
-        <hr>
-        <br>
-        <br>
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+      <a href="showingmoive.html">영화</a>
+      <a href="reservation.html">예매</a>
+      <a href="food_combo.html">매점</a>
+      <a href="suggest.html">추천</a>
+    </div>
+
+    <div class="title">
+      <h1>영화예매</h1>
+      <hr />
+      <br />
+      <br />
     </div>
 
     <div class="container">
-        <div class="container">
-            <!-- 영화 선택 -->
-            <div class="category" id="movieSelection">
-                <table class = "movie-category">
-                    <!-- 카테고리 테이블 -->
-                    <thead>
-                        <tr>
-                            <th>영화 선택</th>
-                        </tr>
-                    </thead>
-                </table>
-                <div class="category-movie" id="movieSelection2">
+      <div class="container">
+        <!-- 영화 선택 -->
+        <div class="category" id="movieSelection">
+          <table class="movie-category">
+            <!-- 카테고리 테이블 -->
+            <thead>
+              <tr>
+                <th>영화 선택</th>
+              </tr>
+            </thead>
+          </table>
+          <div class="category-movie" id="movieSelection2">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <!-- 영화 리스트를 감싸는 내부 테이블 -->
                     <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <!-- 영화 리스트를 감싸는 내부 테이블 -->
-                                    <table>
-                                        <tbody>
-                                            <tr><td class="movie-list recommended" data-movie="너의 이름은">
-                                                <img src="image/12.jpg" alt="12" width="15" height="15"> 너의 이름은
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="꽃다발 같은 사랑을 했다">
-                                                <img src="image/12.jpg" alt="12" width="15" height="15"> 꽃다발 같은 사랑을 했다
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="귀멸의 칼날 : 무한성편">
-                                                <img src="image/19.png" alt="12" width="15" height="15"> 귀멸의 칼날 : 무한성편
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="짱구는 못말려 : B급 음식 서바이벌">
-                                                <img src="image/all.png" alt="12" width="15" height="15"> 짱구는 못말려 극장판
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="명탐정 코난 극장판">
-                                                <img src="image/15.png" alt="12" width="15" height="15"> 명탐정 코난 극장판
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="베테랑">
-                                                <img src="image/15.png" alt="12" width="15" height="15"> 베테랑
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="남자가 사랑을 할 때">
-                                                <img src="image/15.png" alt="12" width="15" height="15"> 남자가 사랑을 할 때
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="기생충">
-                                                <img src="image/15.png" alt="12" width="15" height="15"> 기생충
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="청설">
-                                                <img src="image/all.png" alt="12" width="15" height="15"> 청설
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="위키드">
-                                                <img src="image/all.png" alt="12" width="15" height="15"> 위키드
-                                            </td></tr>
-                                            <tr><td class="movie-list" data-movie="노트북">
-                                                <img src="image/15.png" alt="12" width="15" height="15"> 노트북
-                                            </td></tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="movie-list recommended"
+                            data-movie="너의 이름은"
+                          >
+                            <img
+                              src="image/12.jpg"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            너의 이름은
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="movie-list"
+                            data-movie="꽃다발 같은 사랑을 했다"
+                          >
+                            <img
+                              src="image/12.jpg"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            꽃다발 같은 사랑을 했다
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="movie-list"
+                            data-movie="귀멸의 칼날 : 무한성편"
+                          >
+                            <img
+                              src="image/19.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            귀멸의 칼날 : 무한성편
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="movie-list"
+                            data-movie="짱구는 못말려 : B급 음식 서바이벌"
+                          >
+                            <img
+                              src="image/all.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            짱구는 못말려 극장판
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="movie-list"
+                            data-movie="명탐정 코난 극장판"
+                          >
+                            <img
+                              src="image/15.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            명탐정 코난 극장판
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="movie-list" data-movie="베테랑">
+                            <img
+                              src="image/15.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            베테랑
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="movie-list"
+                            data-movie="남자가 사랑을 할 때"
+                          >
+                            <img
+                              src="image/15.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            남자가 사랑을 할 때
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="movie-list" data-movie="기생충">
+                            <img
+                              src="image/15.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            기생충
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="movie-list" data-movie="청설">
+                            <img
+                              src="image/all.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            청설
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="movie-list" data-movie="위키드">
+                            <img
+                              src="image/all.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            위키드
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="movie-list" data-movie="노트북">
+                            <img
+                              src="image/15.png"
+                              alt="12"
+                              width="15"
+                              height="15"
+                            />
+                            노트북
+                          </td>
+                        </tr>
+                      </tbody>
                     </table>
-                </div>
-            </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
 
-        <!-- 날짜 선택 -->
-        <div class="category" id="dateSelection">
-            <table class = "movie-category">
-                <!-- 카테고리 테이블 -->
-                <thead>
-                    <tr>
-                        <th>날짜 선택</th>
-                    </tr>
-                </thead>
-            </table>
-            <div class="category-date hidden" id="dateSelection2">
-                <table class="calendar" data-month="2024 / 11">
-                    <thead>
-                        <tr class="calendar-title">
-                            <th colspan="7">2024 / 11</th>
-                        </tr>
-                        <tr class="calendar-title">
-                            <th class="sunday">일</th>
-                            <th>월</th>
-                            <th>화</th>
-                            <th>수</th>
-                            <th>목</th>
-                            <th class="friday">금</th>
-                            <th class="saturday">토</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="sunday"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>1</td>
-                            <td class="saturday">2</td>
-                        </tr>
-                        <tr>
-                            <td class="sunday">3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td class="saturday">9</td>
-                        </tr>
-                        <tr>
-                            <td class="sunday">10</td>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                            <td>15</td>
-                            <td class="saturday">16</td>
-                        </tr>
-                        <tr>
-                            <td class="sunday">17</td>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td>21</td>
-                            <td>22</td>
-                            <td class="saturday">23</td>
-                        </tr>
-                        <tr class="calendar-bottom">
-                            <td class="sunday">24</td>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td>28</td>
-                            <td>29</td>
-                            <td class="saturday">30</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="calendar" data-month="2024 / 12">
-                    <thead>
-                        <tr class="calendar-title">
-                            <th colspan="7">2024 / 12</th>
-                        </tr>
-                        <tr class="calendar-title">
-                            <th class="sunday">일</th>
-                            <th>월</th>
-                            <th>화</th>
-                            <th>수</th>
-                            <th>목</th>
-                            <th class="friday">금</th>
-                            <th class="saturday">토</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="sunday">1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td class="saturday">7</td>
-                        </tr>
-                        <tr>
-                            <td class="sunday">8</td>
-                            <td>9</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td class="saturday">14</td>
-                        </tr>
-                        <tr>
-                            <td class="sunday">15</td>
-                            <td>16</td>
-                            <td>17</td>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td class="saturday">21</td>
-                        </tr>
-                        <tr>
-                            <td class="sunday">22</td>
-                            <td>23</td>
-                            <td>24</td>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td class="saturday">28</td>
-                        </tr>
-                        <tr class="calendar-bottom">
-                            <td class="sunday">29</td>
-                            <td>30</td>
-                            <td>31</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="saturday"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+      <!-- 날짜 선택 -->
+      <div class="category" id="dateSelection">
+        <table class="movie-category">
+          <!-- 카테고리 테이블 -->
+          <thead>
+            <tr>
+              <th>날짜 선택</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="category-date hidden" id="dateSelection2">
+          <table class="calendar" data-month="2024 / 11">
+            <thead>
+              <tr class="calendar-title">
+                <th colspan="7">2024 / 11</th>
+              </tr>
+              <tr class="calendar-title">
+                <th class="sunday">일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th class="friday">금</th>
+                <th class="saturday">토</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sunday"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td class="saturday">2</td>
+              </tr>
+              <tr>
+                <td class="sunday">3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td class="saturday">9</td>
+              </tr>
+              <tr>
+                <td class="sunday">10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td class="saturday">16</td>
+              </tr>
+              <tr>
+                <td class="sunday">17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td class="saturday">23</td>
+              </tr>
+              <tr class="calendar-bottom">
+                <td class="sunday">24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td class="saturday">30</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="calendar" data-month="2024 / 12">
+            <thead>
+              <tr class="calendar-title">
+                <th colspan="7">2024 / 12</th>
+              </tr>
+              <tr class="calendar-title">
+                <th class="sunday">일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th class="friday">금</th>
+                <th class="saturday">토</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sunday">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td class="saturday">7</td>
+              </tr>
+              <tr>
+                <td class="sunday">8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td class="saturday">14</td>
+              </tr>
+              <tr>
+                <td class="sunday">15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td class="saturday">21</td>
+              </tr>
+              <tr>
+                <td class="sunday">22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td class="saturday">28</td>
+              </tr>
+              <tr class="calendar-bottom">
+                <td class="sunday">29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="saturday"></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- 시간 선택 -->
-        <div class="category" id="timeSelection">
-            <table class="movie-category">
-                <thead>
+      </div>
+      <!-- 시간 선택 -->
+      <div class="category" id="timeSelection">
+        <table class="movie-category">
+          <thead>
+            <tr>
+              <th colspan="2">시간 선택</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="category-time hidden" id="timeSelection2">
+          <table class="movie-category">
+            <!-- 카테고리 제목 -->
+            <tbody>
+              <!-- 4관 섹션 -->
+              <tr>
+                <td class="screen">1관</td>
+                <td class="times">
+                  <table class="time-table">
                     <tr>
-                        <th colspan="2">시간 선택</th>
+                      <td data-screen="1관">10:40</td>
+                      <td data-screen="1관">12:30</td>
+                      <td data-screen="1관">14:10</td>
+                      <td data-screen="1관">16:40</td>
                     </tr>
-                </thead>
-            </table>
-            <div class="category-time hidden" id="timeSelection2">
-                <table class="movie-category">
-                    <!-- 카테고리 제목 -->
-                    <tbody>
-                        <!-- 4관 섹션 -->
-                        <tr>
-                            <td class="screen">1관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="1관">10:40</td>
-                                        <td data-screen="1관">12:30</td>
-                                        <td data-screen="1관">14:10</td>
-                                        <td data-screen="1관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="1관">18:10</td>
-                                        <td data-screen="1관">20:20</td>
-                                        <td data-screen="1관">21:30</td>
-                                        <td data-screen="1관">22:50</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <!-- 7관 섹션 -->
-                        <tr>
-                            <td class="screen">2관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="2관">10:40</td>
-                                        <td data-screen="2관">12:30</td>
-                                        <td data-screen="2관">14:10</td>
-                                        <td data-screen="2관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="2관">18:10</td>
-                                        <td data-screen="2관">20:20</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="screen">3관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="3관">10:40</td>
-                                        <td data-screen="3관">12:30</td>
-                                        <td data-screen="3관">14:10</td>
-                                        <td data-screen="3관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="3관">18:10</td>
-                                        <td data-screen="3관">20:20</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="screen">4관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="4관">10:40</td>
-                                        <td data-screen="4관">12:30</td>
-                                        <td data-screen="4관">14:10</td>
-                                        <td data-screen="4관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="4관">18:10</td>
-                                        <td data-screen="4관">20:20</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="screen">5관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="5관">10:40</td>
-                                        <td data-screen="5관">12:30</td>
-                                        <td data-screen="5관">14:10</td>
-                                        <td data-screen="5관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="5관">18:10</td>
-                                        <td data-screen="5관">20:20</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="screen">6관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="6관">10:40</td>
-                                        <td data-screen="6관">12:30</td>
-                                        <td data-screen="6관">14:10</td>
-                                        <td data-screen="6관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="6관">18:10</td>
-                                        <td data-screen="6관">20:20</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="screen">7관</td>
-                            <td class="times">
-                                <table class="time-table">
-                                    <tr>
-                                        <td data-screen="7관">10:40</td>
-                                        <td data-screen="7관">12:30</td>
-                                        <td data-screen="7관">14:10</td>
-                                        <td data-screen="7관">16:40</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-screen="7관">18:10</td>
-                                        <td data-screen="7관">20:20</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <tr>
+                      <td data-screen="1관">18:10</td>
+                      <td data-screen="1관">20:20</td>
+                      <td data-screen="1관">21:30</td>
+                      <td data-screen="1관">22:50</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- 7관 섹션 -->
+              <tr>
+                <td class="screen">2관</td>
+                <td class="times">
+                  <table class="time-table">
+                    <tr>
+                      <td data-screen="2관">10:40</td>
+                      <td data-screen="2관">12:30</td>
+                      <td data-screen="2관">14:10</td>
+                      <td data-screen="2관">16:40</td>
+                    </tr>
+                    <tr>
+                      <td data-screen="2관">18:10</td>
+                      <td data-screen="2관">20:20</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="screen">3관</td>
+                <td class="times">
+                  <table class="time-table">
+                    <tr>
+                      <td data-screen="3관">10:40</td>
+                      <td data-screen="3관">12:30</td>
+                      <td data-screen="3관">14:10</td>
+                      <td data-screen="3관">16:40</td>
+                    </tr>
+                    <tr>
+                      <td data-screen="3관">18:10</td>
+                      <td data-screen="3관">20:20</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="screen">4관</td>
+                <td class="times">
+                  <table class="time-table">
+                    <tr>
+                      <td data-screen="4관">10:40</td>
+                      <td data-screen="4관">12:30</td>
+                      <td data-screen="4관">14:10</td>
+                      <td data-screen="4관">16:40</td>
+                    </tr>
+                    <tr>
+                      <td data-screen="4관">18:10</td>
+                      <td data-screen="4관">20:20</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="screen">5관</td>
+                <td class="times">
+                  <table class="time-table">
+                    <tr>
+                      <td data-screen="5관">10:40</td>
+                      <td data-screen="5관">12:30</td>
+                      <td data-screen="5관">14:10</td>
+                      <td data-screen="5관">16:40</td>
+                    </tr>
+                    <tr>
+                      <td data-screen="5관">18:10</td>
+                      <td data-screen="5관">20:20</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="screen">6관</td>
+                <td class="times">
+                  <table class="time-table">
+                    <tr>
+                      <td data-screen="6관">10:40</td>
+                      <td data-screen="6관">12:30</td>
+                      <td data-screen="6관">14:10</td>
+                      <td data-screen="6관">16:40</td>
+                    </tr>
+                    <tr>
+                      <td data-screen="6관">18:10</td>
+                      <td data-screen="6관">20:20</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="screen">7관</td>
+                <td class="times">
+                  <table class="time-table">
+                    <tr>
+                      <td data-screen="7관">10:40</td>
+                      <td data-screen="7관">12:30</td>
+                      <td data-screen="7관">14:10</td>
+                      <td data-screen="7관">16:40</td>
+                    </tr>
+                    <tr>
+                      <td data-screen="7관">18:10</td>
+                      <td data-screen="7관">20:20</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- 선택한 항목을 표시할 섹션 -->
+      </div>
+      <!-- 선택한 항목을 표시할 섹션 -->
     </div>
     <div class="selected-summary">
-        <table class="summary-table">
-            <thead>
-                <tr>
-                    <th>영화</th>
-                    <th>날짜</th>
-                    <th>시간</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="summary-body">
-                <!-- 선택된 항목이 동적으로 추가될 부분 -->
-            </tbody>
-        </table>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>영화</th>
+            <th>날짜</th>
+            <th>시간</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="summary-body">
+          <!-- 선택된 항목이 동적으로 추가될 부분 -->
+        </tbody>
+      </table>
     </div>
-    
 
     <script>
-        // 영화 선택 기능
-        document.querySelectorAll('.movie-list').forEach(item => {
-            item.addEventListener('click', function() {
-                // 기존 선택된 항목 스타일 초기화
-                document.querySelectorAll('.movie-list').forEach(el => el.classList.remove('selected'));
+      // 영화 선택 기능
+      document.querySelectorAll(".movie-list").forEach((item) => {
+        item.addEventListener("click", function () {
+          // 기존 선택된 항목 스타일 초기화
+          document
+            .querySelectorAll(".movie-list")
+            .forEach((el) => el.classList.remove("selected"));
 
-                // 현재 클릭한 항목에 선택 스타일 추가
-                this.classList.add('selected');
-            });
+          // 현재 클릭한 항목에 선택 스타일 추가
+          this.classList.add("selected");
         });
+      });
 
-        // 달력 날짜 선택 기능
-        document.querySelectorAll('.calendar td').forEach(cell => {
-            cell.addEventListener('click', function () {
-                // 이미 선택된 날짜의 스타일 초기화
-                document.querySelectorAll('.calendar td').forEach(el => el.classList.remove('selected'));
+      // 달력 날짜 선택 기능
+      document.querySelectorAll(".calendar td").forEach((cell) => {
+        cell.addEventListener("click", function () {
+          // 이미 선택된 날짜의 스타일 초기화
+          document
+            .querySelectorAll(".calendar td")
+            .forEach((el) => el.classList.remove("selected"));
 
-                // 선택한 셀에 스타일 추가
-                this.classList.add('selected');
-            });
+          // 선택한 셀에 스타일 추가
+          this.classList.add("selected");
         });
+      });
 
-                // 모든 시간 슬롯 요소 가져오기
-        const timeSlots = document.querySelectorAll('.time-table td');
+      // 모든 시간 슬롯 요소 가져오기
+      const timeSlots = document.querySelectorAll(".time-table td");
 
-        // 각 시간 슬롯에 클릭 이벤트 추가
-        timeSlots.forEach(slot => {
-            slot.addEventListener('click', () => {
-                // 이전에 선택된 슬롯에서 selected 클래스 제거
-                timeSlots.forEach(s => s.classList.remove('selected'));
+      // 각 시간 슬롯에 클릭 이벤트 추가
+      timeSlots.forEach((slot) => {
+        slot.addEventListener("click", () => {
+          // 이전에 선택된 슬롯에서 selected 클래스 제거
+          timeSlots.forEach((s) => s.classList.remove("selected"));
 
-                // 현재 클릭된 슬롯에 selected 클래스 추가
-                slot.classList.add('selected');
-            });
+          // 현재 클릭된 슬롯에 selected 클래스 추가
+          slot.classList.add("selected");
         });
+      });
 
-        // 선택한 항목 데이터를 저장
-        let selectedMovie = "";
-        let selectedMoviePoster = "";
-        let selectedDate = "";
-        let selectedTime = "";
-        let currentMonth = ""; // 동적으로 갱신
-        let selectedScreen = ""; // 상영관 정보 추가
+      // 선택한 항목 데이터를 저장
+      let selectedMovie = "";
+      let selectedMoviePoster = "";
+      let selectedDate = "";
+      let selectedTime = "";
+      let currentMonth = ""; // 동적으로 갱신
+      let selectedScreen = ""; // 상영관 정보 추가
 
-        // 영화 선택 이벤트
-        document.querySelectorAll('.movie-list').forEach(item => {
-            item.addEventListener('click', function () {
-                selectedMovie = this.getAttribute('data-movie'); // 영화 이름
-                // 영화에 따라 포스터 이미지 경로 설정
-                if (selectedMovie === "너의 이름은") {
-                    selectedMoviePoster = "image/yourname.png";
-                } else if (selectedMovie === "꽃다발 같은 사랑을 했다") {
-                    selectedMoviePoster = "image/hana.png";
-                } else if (selectedMovie === "귀멸의 칼날 : 무한성편") {
-                    selectedMoviePoster = "image/guical.jpg";
-                } else if (selectedMovie === "짱구는 못말려 : B급 음식 서바이벌") {
-                    selectedMoviePoster = "image/jjanggu.jpg";
-                } else if (selectedMovie === "명탐정 코난 극장판") {
-                    selectedMoviePoster = "image/conan.jpg";
-                } else if (selectedMovie === "베테랑") {
-                    selectedMoviePoster = "image/vaetaerang.jpg";
-                } else if (selectedMovie === "남자가 사랑을 할 때") {
-                    selectedMoviePoster = "image/manlovewoman.jpg";
-                } else if (selectedMovie === "기생충") {
-                    selectedMoviePoster = "image/gisaengchung.jpg";
-                } else if (selectedMovie === "청설") {
-                    selectedMoviePoster = "image/sul.jpg";
-                } else if (selectedMovie === "위키드") {
-                    selectedMoviePoster = "image/wikid.jpg";
-                } else if (selectedMovie === "노트북") {
-                    selectedMoviePoster = "image/notebook.jpg";
-                } else {
-                    selectedMoviePoster = "image/default.jpg"; // 기본 이미지
-                }
+      // 영화 선택 이벤트
+      document.querySelectorAll(".movie-list").forEach((item) => {
+        item.addEventListener("click", function () {
+          selectedMovie = this.getAttribute("data-movie"); // 영화 이름
+          // 영화에 따라 포스터 이미지 경로 설정
+          if (selectedMovie === "너의 이름은") {
+            selectedMoviePoster = "image/yourname.png";
+          } else if (selectedMovie === "꽃다발 같은 사랑을 했다") {
+            selectedMoviePoster = "image/hana.png";
+          } else if (selectedMovie === "귀멸의 칼날 : 무한성편") {
+            selectedMoviePoster = "image/guical.jpg";
+          } else if (selectedMovie === "짱구는 못말려 : B급 음식 서바이벌") {
+            selectedMoviePoster = "image/jjanggu.jpg";
+          } else if (selectedMovie === "명탐정 코난 극장판") {
+            selectedMoviePoster = "image/conan.jpg";
+          } else if (selectedMovie === "베테랑") {
+            selectedMoviePoster = "image/vaetaerang.jpg";
+          } else if (selectedMovie === "남자가 사랑을 할 때") {
+            selectedMoviePoster = "image/manlovewoman.jpg";
+          } else if (selectedMovie === "기생충") {
+            selectedMoviePoster = "image/gisaengchung.jpg";
+          } else if (selectedMovie === "청설") {
+            selectedMoviePoster = "image/sul.jpg";
+          } else if (selectedMovie === "위키드") {
+            selectedMoviePoster = "image/wikid.jpg";
+          } else if (selectedMovie === "노트북") {
+            selectedMoviePoster = "image/notebook.jpg";
+          } else {
+            selectedMoviePoster = "image/default.jpg"; // 기본 이미지
+          }
 
-                // 날짜 선택 섹션 표시
-                document.getElementById('dateSelection2').classList.remove('hidden');
-                // 시간 선택 섹션 숨기기
-                document.getElementById('timeSelection2').classList.add('hidden');
+          // 날짜 선택 섹션 표시
+          document.getElementById("dateSelection2").classList.remove("hidden");
+          // 시간 선택 섹션 숨기기
+          document.getElementById("timeSelection2").classList.add("hidden");
 
-                updateSummary();
-            });
+          updateSummary();
         });
+      });
 
-        // 날짜 선택 이벤트
-        document.querySelectorAll('#dateSelection2 .calendar td').forEach(cell => {
-            cell.addEventListener('click', function () {
-                // 클릭된 날짜 셀의 부모 달력을 찾기
-                const parentCalendar = this.closest('.calendar');
-                if (parentCalendar) {
-                    currentMonth = parentCalendar.getAttribute('data-month'); // "2024 / 11" 또는 "2024 / 12" 가져오기
-                }
-
-                selectedDate = this.textContent.trim(); // 날짜 텍스트
-
-                // 선택한 날짜로 요일 계산
-                if (currentMonth && selectedDate) {
-                    const [year, month] = currentMonth.split(" / ");
-                    const fullDate = new Date(`${year}-${month}-${selectedDate}`);
-                    const days = ["일", "월", "화", "수", "목", "금", "토"];
-                    selectedDay = days[fullDate.getDay()]; // 요일 이름 가져오기
-                } else {
-                    selectedDay = null; // 유효하지 않은 경우 초기화
-                }
-
-                // 시간 선택 섹션 표시
-                document.getElementById('timeSelection2').classList.remove('hidden');
-
-                updateSummary();
-            });
-        });
-
-        // 시간 선택 이벤트
-        document.querySelectorAll('.time-table td').forEach(slot => {
-            slot.addEventListener('click', function () {
-                selectedTime = this.textContent.trim(); // 시간 텍스트
-                selectedScreen = this.getAttribute('data-screen') || "상영관 정보 없음"; // 상영관 정보 가져오기
-
-                updateSummary(); // 선택 요약 업데이트
-            });
-        });
-
-        // 선택한 정보를 요약 테이블에 업데이트
-        function updateSummary() {
-            const summaryBody = document.getElementById('summary-body');
-            summaryBody.innerHTML = ""; // 기존 내용을 초기화
-
-            if (selectedMovie || selectedDate || selectedTime) {
-                const row = document.createElement('tr');
-
-                // 영화 이름과 포스터
-                const movieCell = document.createElement('td');
-                const movieInfo = document.createElement('div');
-                movieInfo.className = "movie-info";
-
-                const posterImg = document.createElement('img');
-                posterImg.src = selectedMoviePoster || "image/default.jpg"; // 선택된 영화 포스터 또는 기본 이미지
-                posterImg.alt = "포스터";
-                movieInfo.appendChild(posterImg);
-
-                const movieTitle = document.createElement('span');
-                movieTitle.textContent = selectedMovie || "선택 안됨";
-                movieInfo.appendChild(movieTitle);
-
-                movieCell.appendChild(movieInfo);
-                row.appendChild(movieCell);
-
-                // 날짜 및 요일
-                const dateCell = document.createElement('td');
-                dateCell.innerHTML = selectedDate && currentMonth
-                    ? `${currentMonth}<br>${selectedDate} (${selectedDay})` // 날짜와 요일 표시
-                    : "선택 안됨";
-                row.appendChild(dateCell);
-
-                // 시간 및 상영관
-                const timeCell = document.createElement('td');
-                timeCell.textContent = selectedTime && selectedScreen 
-                    ? `${selectedTime} (${selectedScreen})` // 시간과 상영관 정보 표시
-                    : "선택 안됨";
-                row.appendChild(timeCell);
-
-                // 액션 (좌석 선택 버튼)
-                const actionCell = document.createElement('td');
-                const seatButton = document.createElement('button');
-                seatButton.textContent = "좌석 선택";
-                seatButton.className = "seat-selection";
-                actionCell.appendChild(seatButton);
-                row.appendChild(actionCell);
-
-                summaryBody.appendChild(row);
+      // 날짜 선택 이벤트
+      document
+        .querySelectorAll("#dateSelection2 .calendar td")
+        .forEach((cell) => {
+          cell.addEventListener("click", function () {
+            // 클릭된 날짜 셀의 부모 달력을 찾기
+            const parentCalendar = this.closest(".calendar");
+            if (parentCalendar) {
+              currentMonth = parentCalendar.getAttribute("data-month"); // "2024 / 11" 또는 "2024 / 12" 가져오기
             }
-        }
-    </script>
-</body>
-</html>
 
+            selectedDate = this.textContent.trim(); // 날짜 텍스트
+
+            // 선택한 날짜로 요일 계산
+            if (currentMonth && selectedDate) {
+              const [year, month] = currentMonth.split(" / ");
+              const fullDate = new Date(`${year}-${month}-${selectedDate}`);
+              const days = ["일", "월", "화", "수", "목", "금", "토"];
+              selectedDay = days[fullDate.getDay()]; // 요일 이름 가져오기
+            } else {
+              selectedDay = null; // 유효하지 않은 경우 초기화
+            }
+
+            // 시간 선택 섹션 표시
+            document
+              .getElementById("timeSelection2")
+              .classList.remove("hidden");
+
+            updateSummary();
+          });
+        });
+
+      // 시간 선택 이벤트
+      document.querySelectorAll(".time-table td").forEach((slot) => {
+        slot.addEventListener("click", function () {
+          selectedTime = this.textContent.trim(); // 시간 텍스트
+          selectedScreen =
+            this.getAttribute("data-screen") || "상영관 정보 없음"; // 상영관 정보 가져오기
+
+          updateSummary(); // 선택 요약 업데이트
+        });
+      });
+
+      // 선택한 정보를 요약 테이블에 업데이트
+      function updateSummary() {
+        const summaryBody = document.getElementById("summary-body");
+        summaryBody.innerHTML = ""; // 기존 내용을 초기화
+
+        if (selectedMovie || selectedDate || selectedTime) {
+          const row = document.createElement("tr");
+
+          // 영화 이름과 포스터
+          const movieCell = document.createElement("td");
+          const movieInfo = document.createElement("div");
+          movieInfo.className = "movie-info";
+
+          const posterImg = document.createElement("img");
+          posterImg.src = selectedMoviePoster || "image/default.jpg"; // 선택된 영화 포스터 또는 기본 이미지
+          posterImg.alt = "포스터";
+          movieInfo.appendChild(posterImg);
+
+          const movieTitle = document.createElement("span");
+          movieTitle.textContent = selectedMovie || "선택 안됨";
+          movieInfo.appendChild(movieTitle);
+
+          movieCell.appendChild(movieInfo);
+          row.appendChild(movieCell);
+
+          // 날짜 및 요일
+          const dateCell = document.createElement("td");
+          dateCell.innerHTML =
+            selectedDate && currentMonth
+              ? `${currentMonth}<br>${selectedDate} (${selectedDay})` // 날짜와 요일 표시
+              : "선택 안됨";
+          row.appendChild(dateCell);
+
+          // 시간 및 상영관
+          const timeCell = document.createElement("td");
+          timeCell.textContent =
+            selectedTime && selectedScreen
+              ? `${selectedTime} (${selectedScreen})` // 시간과 상영관 정보 표시
+              : "선택 안됨";
+          row.appendChild(timeCell);
+
+          // 액션 (좌석 선택 버튼)
+          const actionCell = document.createElement("td");
+          const seatButton = document.createElement("button");
+          seatButton.textContent = "좌석 선택";
+          seatButton.className = "seat-selection";
+          // 클릭 이벤트 추가
+          seatButton.addEventListener("click", () => {
+            // login.html로 이동
+            window.location.href = "seat.html";
+          });
+
+          actionCell.appendChild(seatButton);
+          row.appendChild(actionCell);
+
+          summaryBody.appendChild(row);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -35,7 +35,14 @@ body {
   font-size: 14px;
   margin-right: 200px;
 }
+.header .menu a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 링크 기본 색상 설정 */
+}
 
+.header .menu a:hover {
+  color: red; /* 마우스 오버 시 색상 변경 (선택 사항) */
+}
 /* 네비게이션 바 스타일 */
 .navbar {
   display: flex;
