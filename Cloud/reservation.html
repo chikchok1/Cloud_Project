@@ -8,20 +8,73 @@
   <body>
     <!-- 상단 메뉴 -->
     <div class="header">
-      <h1><a href="index.html">Three Sons Cinema</a></h1>
-      <div class="menu">
-        <a href="login.html">로그인</a>
-        <a href="newClient.htmls">회원가입</a>
-        <a href="#">마이페이지</a>
+      <div class="header_content">
+        <div class="contents">
+          <h1 class="title">
+            <a href="index.html">
+              Three Sons
+              <span>Movie Cinema</span></a
+            >
+          </h1>
+          <ul class="memberInfo">
+            <li>
+              <a href="login.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                  alt="로그인"
+                />
+                <span>로그인</span>
+              </a>
+            </li>
+            <li>
+              <a href="newClient.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                  alt="회원가입"
+                />
+                <span>회원가입</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                  alt="마이페이지"
+                />
+                <span>마이페이지</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr />
       </div>
-    </div>
-
-    <!-- 네비게이션 바 -->
-    <div class="navbar">
-      <a href="showingmoive.html">영화</a>
-      <a href="reservation.html">예매</a>
-      <a href="food_combo.html">매점</a>
-      <a href="suggest.html">추천</a>
+      <div class="nav">
+        <div class="contents">
+          <ul class="nav-menu">
+            <li>
+              <h2>
+                <a href="showingmoive.html">영화</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="reservation.html">예매</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="food_combo.html">매점</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="suggest.html">추천</a>
+              </h2>
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </div>
     </div>
 
     <div class="title">
@@ -498,13 +551,14 @@
     </div>
 
     <script>
-// 선택한 항목을 URL에 추가
-// 선택한 항목을 URL에 추가
+      // 선택한 항목을 URL에 추가
+      // 선택한 항목을 URL에 추가
       function updateURL() {
         const queryParams = new URLSearchParams();
 
         if (selectedMovie) queryParams.set("movie", selectedMovie);
-        if (selectedDate) queryParams.set("date", `${currentMonth} ${selectedDate}`);
+        if (selectedDate)
+          queryParams.set("date", `${currentMonth} ${selectedDate}`);
         if (selectedScreen) queryParams.set("screen", selectedScreen);
         if (selectedTime) queryParams.set("time", selectedTime);
 
@@ -577,7 +631,8 @@
 
           // 상태 업데이트
           selectedTime = this.textContent.trim();
-          selectedScreen = this.getAttribute("data-screen") || "상영관 정보 없음";
+          selectedScreen =
+            this.getAttribute("data-screen") || "상영관 정보 없음";
 
           // URL 업데이트
           updateURL();
@@ -723,7 +778,12 @@
           seatButton.className = "seat-selection";
           // 버튼 클릭 이벤트 처리
           seatButton.addEventListener("click", () => {
-            if (selectedMovie && selectedDate && selectedScreen && selectedTime) {
+            if (
+              selectedMovie &&
+              selectedDate &&
+              selectedScreen &&
+              selectedTime
+            ) {
               const queryParams = new URLSearchParams({
                 movie: selectedMovie,
                 date: `${currentMonth} ${selectedDate}`,
@@ -745,7 +805,7 @@
 
           summaryBody.appendChild(row);
         }
-        
+
         // 좌석 선택 버튼 클릭 이벤트 추가
         document.addEventListener("DOMContentLoaded", () => {
           // "좌석 선택" 버튼 클릭 이벤트 추가
@@ -760,7 +820,12 @@
 
         // 선택한 항목을 URL에 포함하여 다음 페이지로 이동
         function goToSeatSelection() {
-          if (!selectedMovie || !selectedDate || !selectedTime || !selectedScreen) {
+          if (
+            !selectedMovie ||
+            !selectedDate ||
+            !selectedTime ||
+            !selectedScreen
+          ) {
             alert("모든 항목을 선택해주세요!"); // 필수 항목 선택 확인
             return;
           }
@@ -773,9 +838,7 @@
             time: selectedTime,
           });
         }
-
       }
-
     </script>
   </body>
 </html>

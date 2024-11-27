@@ -11,31 +11,88 @@
   <body>
     <!-- 상단 메뉴 -->
     <div class="header">
-      <h1><a href="index.html">Three Sons Cinema</a></h1>
-      <div class="menu">
-        <a href="login.html">로그인</a>
-        <a href="newClient.html">회원가입</a>
-        <a href="#">마이페이지</a>
+      <div class="header_content">
+        <div class="contents">
+          <h1 class="title">
+            <a href="index.html">
+              Three Sons
+              <span>Movie Cinema</span></a
+            >
+          </h1>
+          <ul class="memberInfo">
+            <li>
+              <a href="login.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                  alt="로그인"
+                />
+                <span>로그인</span>
+              </a>
+            </li>
+            <li>
+              <a href="newClient.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                  alt="회원가입"
+                />
+                <span>회원가입</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                  alt="마이페이지"
+                />
+                <span>마이페이지</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr />
       </div>
-    </div>
-
-    <!-- 네비게이션 바 -->
-    <div class="navbar">
-      <a href="showingmoive.html">영화</a>
-      <a href="reservation.html">예매</a>
-      <a href="food_combo.html">매점</a>
-      <a href="suggest.html">추천</a>
+      <div class="nav">
+        <div class="contents">
+          <ul class="nav-menu">
+            <li>
+              <h2>
+                <a href="showingmoive.html">영화</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="reservation.html">예매</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="food_combo.html">매점</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="suggest.html">추천</a>
+              </h2>
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </div>
     </div>
     <!-- 동영상 배경 섹션 -->
     <div class="video-section">
-      <video autoplay muted loop class="background-video">
-        <source src="image/tra.mp4" type="video/mp4" />
-        <!-- 동영상 파일 경로를 수정해 주세요 -->
-      </video>
-      <div class="video-overlay">
-        <h2>트라페지움</h2>
-        <p>'봇치더록' 제작사가 선보이는 청춘X아이돌 무비! 11/14 개봉</p>
-        <button>상세보기</button>
+      <div class="video-part">
+        <video autoplay muted loop class="background-video">
+          <source src="image/Firefighters.mp4" type="video/mp4" />
+          <!-- 동영상 파일 경로를 수정해 주세요 -->
+        </video>
+        <div class="video-overlay">
+          <h2>소방관</h2>
+          <p>2001년 홍제동 화제 사건 실화 <br />12월 4일 극장 대개봉</p>
+          <button>
+            <a href="View_details/fire.html" target="_blank">상세보기</a>
+          </button>
+        </div>
       </div>
     </div>
     <!-- 영화 섹션 -->

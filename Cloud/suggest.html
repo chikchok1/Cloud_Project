@@ -1,307 +1,357 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Sons Cinema</title>
+    <link rel="stylesheet" href="suggest_style.css" />
+    <script>
+      // 화면슬라이더 JS
+      let currentIndex = 0;
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Three Sons Cinema</title>
-  <link rel="stylesheet" href="suggest_style.css" />
-  <script>
-    // 화면슬라이더 JS
-    let currentIndex = 0;
+      function showNextSlide() {
+        const slides = document.querySelector(".slides");
+        const totalSlides = slides.children.length;
 
-    function showNextSlide() {
-      const slides = document.querySelector(".slides");
-      const totalSlides = slides.children.length;
+        // 슬라이드 이동
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      // 슬라이드 이동
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-      // 현재 슬라이드 인덱스 업데이트
-      currentIndex = (currentIndex + 1) % totalSlides;
-    }
-
-    // DOMContentLoaded 이후 슬라이더 작동
-    document.addEventListener("DOMContentLoaded", function () {
-      setInterval(showNextSlide, 3000);
-    });
-  </script>
-  <script>
-    // 추천영화 리스트 JS
-    const movieData = [
-      {
-        title: "글레디에이터",
-        genre: "action",
-        age: "adult",
-        rating: 3,
-        keyword: "액션",
-        poster: "image/glady.jpg",
-      },
-      {
-        title: "위키드",
-        genre: "drama",
-        age: "all",
-        rating: 4,
-        keyword: "모험",
-        poster: "image/wikid.jpg",
-      },
-      {
-        title: "청설",
-        genre: "drama",
-        age: "12",
-        rating: 4,
-        keyword: "웃음",
-        poster: "image/sul.jpg",
-      },
-      {
-        title: "사흘",
-        genre: "holor",
-        age: "adult",
-        rating: 2,
-        keyword: "공포",
-        poster: "image/four.jpg",
-      },
-      {
-        title: "히든페이스",
-        genre: "holor",
-        age: "adult",
-        rating: 5,
-        keyword: "공포",
-        poster: "image/hidden.jpg",
-      }, 
-      {
-        title: "코난 극장판 :11번째 스트라이커",
-        genre: "comedy",
-        age: "12",
-        rating: 5,
-        keyword: "액션",
-        poster: "image/conan.jpg",
-      },
-      {
-        title: "문을 여는 법",
-        genre: "drama",
-        age: "12",
-        rating: 5,
-        keyword: "웃음",
-        poster: "image/dooropen.jpg",
-      },
-      {
-        title: "캐롤",
-        genre: "drama",
-        age: "adult",
-        rating: 5,
-        keyword: "캐롤",
-        poster: "image/caerol.jpeg",
-      },
-      {
-        title: "노트북",
-        genre: "drama",
-        age: "15",
-        rating: 4,
-        keyword: "공포",
-        poster: "image/notebook.jpg",
-      },
-      {
-        title: "남자가 사랑할 때",
-        genre: "drama",
-        age: "adult",
-        rating: 4,
-        keyword: "사랑",
-        poster: "image/manlovewoman.jpg",
-      },     
-      {
-        title: "베테랑2",
-        genre: "action",
-        age: "15",
-        rating: 2,
-        keyword: "액션",
-        poster: "image/vaetaerang.jpg",
-      },
-      {
-        title: "기생충",
-        genre: "drama",
-        age: "15",
-        rating: 5,
-        keyword: "명작",
-        poster: "image/gisaengchung.jpg",
-      },
-
-
-
-      {
-        title: "극한직업",
-        genre: "comedy",
-        age: "12",
-        rating: 4,
-        keyword: "웃음",
-        poster: "image/hell.jpg",
-      },
-      {
-        title: "군함도",
-        genre: "action",
-        age: "15",
-        rating: 5,
-        keyword: "액션",
-        poster: "image/gunham.jpg",
-      },
-      {
-        title: "탈주",
-        genre: "action",
-        age: "12",
-        rating: 4,
-        keyword: "액션",
-        poster: "image/run.jpg",
-      },
-      {
-        title: "엑시트",
-        genre: "comedy",
-        age: "15",
-        rating: 3,
-        keyword: "액션",
-        poster: "image/exit.jpg",
-      },
-      {
-        title: "아마존 활명수",
-        genre: "comedy",
-        age: "12",
-        rating: 2,
-        keyword: "액션",
-        poster: "image/amajon.jpg",
-      },
-      {
-        title: "파묘",
-        genre: "holor",
-        age: "15",
-        rating: 3,
-        keyword: "액션",
-        poster: "image/pamyo.jpg",
-      },
-      {
-        title: "타로",
-        genre: "holor",
-        age: "adult",
-        rating: 4,
-        keyword: "액션",
-        poster: "image/taro.jpg",
+        // 현재 슬라이드 인덱스 업데이트
+        currentIndex = (currentIndex + 1) % totalSlides;
       }
 
-    ];
-    document.addEventListener("DOMContentLoaded", function () {
-      // 초기화 버튼 클릭 이벤트
-      document.getElementById("reset").addEventListener("click", function () {
-        document.getElementById("genre").selectedIndex = 0;
-        document.getElementById("age").selectedIndex = 0;
-        document.getElementById("rating").selectedIndex = 0;
-        document.getElementById("keyword").value = "";
-        document.getElementById("movie-list").innerHTML = "";
+      // DOMContentLoaded 이후 슬라이더 작동
+      document.addEventListener("DOMContentLoaded", function () {
+        setInterval(showNextSlide, 3000);
       });
+    </script>
+    <script>
+      // 추천영화 리스트 JS
+      const movieData = [
+        {
+          title: "글레디에이터",
+          genre: "action",
+          age: "adult",
+          rating: 3,
+          keyword: "액션",
+          poster: "image/glady.jpg",
+        },
+        {
+          title: "위키드",
+          genre: "drama",
+          age: "all",
+          rating: 4,
+          keyword: "모험",
+          poster: "image/wikid.jpg",
+        },
+        {
+          title: "청설",
+          genre: "drama",
+          age: "12",
+          rating: 4,
+          keyword: "웃음",
+          poster: "image/sul.jpg",
+        },
+        {
+          title: "사흘",
+          genre: "holor",
+          age: "adult",
+          rating: 2,
+          keyword: "공포",
+          poster: "image/four.jpg",
+        },
+        {
+          title: "히든페이스",
+          genre: "holor",
+          age: "adult",
+          rating: 5,
+          keyword: "공포",
+          poster: "image/hidden.jpg",
+        },
+        {
+          title: "코난 극장판 :11번째 스트라이커",
+          genre: "comedy",
+          age: "12",
+          rating: 5,
+          keyword: "액션",
+          poster: "image/conan.jpg",
+        },
+        {
+          title: "문을 여는 법",
+          genre: "drama",
+          age: "12",
+          rating: 5,
+          keyword: "웃음",
+          poster: "image/dooropen.jpg",
+        },
+        {
+          title: "캐롤",
+          genre: "drama",
+          age: "adult",
+          rating: 5,
+          keyword: "캐롤",
+          poster: "image/caerol.jpeg",
+        },
+        {
+          title: "노트북",
+          genre: "drama",
+          age: "15",
+          rating: 4,
+          keyword: "공포",
+          poster: "image/notebook.jpg",
+        },
+        {
+          title: "남자가 사랑할 때",
+          genre: "drama",
+          age: "adult",
+          rating: 4,
+          keyword: "사랑",
+          poster: "image/manlovewoman.jpg",
+        },
+        {
+          title: "베테랑2",
+          genre: "action",
+          age: "15",
+          rating: 2,
+          keyword: "액션",
+          poster: "image/vaetaerang.jpg",
+        },
+        {
+          title: "기생충",
+          genre: "drama",
+          age: "15",
+          rating: 5,
+          keyword: "명작",
+          poster: "image/gisaengchung.jpg",
+        },
 
-      // 검색 버튼 클릭 이벤트
-      document
-        .getElementById("search")
-        .addEventListener("click", function () {
-          const genre = document.getElementById("genre").value;
-          const age = document.getElementById("age").value;
-          const rating = document.getElementById("rating").value;
-          const keyword = document.getElementById("keyword").value.trim();
-
-          const movieList = document.getElementById("movie-list");
-          movieList.innerHTML = ""; // 기존 목록 초기화
-
-          // 필터링
-          const filteredMovies = movieData.filter((movie) => {
-            return (
-              (!genre || movie.genre === genre) &&
-              (!age || movie.age === age) &&
-              (!rating || movie.rating === Number(rating)) &&
-              (!keyword || movie.keyword.includes(keyword))
-            );
-          });
-
-          // 결과 표시
-          if (filteredMovies.length > 0) {
-            filteredMovies.forEach((movie) => {
-              const listItem = document.createElement("li");
-
-              // 이미지 태그 생성
-              const img = document.createElement("img");
-              img.src = movie.poster; // 포스터 경로
-              img.alt = movie.title;
-              img.style.width = "200px"; // 이미지 크기 조정
-              img.style.height = "300px";
-
-              // 영화 제목 추가
-              const title = document.createElement("p");
-              title.textContent = movie.title;
-
-              // 리스트 아이템에 추가
-              listItem.appendChild(img);
-              listItem.appendChild(title);
-              movieList.appendChild(listItem);
-            });
-          } else {
-            movieList.innerHTML = "추천 영화가 없습니다.";
-          }
+        {
+          title: "극한직업",
+          genre: "comedy",
+          age: "12",
+          rating: 4,
+          keyword: "웃음",
+          poster: "image/hell.jpg",
+        },
+        {
+          title: "군함도",
+          genre: "action",
+          age: "15",
+          rating: 5,
+          keyword: "액션",
+          poster: "image/gunham.jpg",
+        },
+        {
+          title: "탈주",
+          genre: "action",
+          age: "12",
+          rating: 4,
+          keyword: "액션",
+          poster: "image/run.jpg",
+        },
+        {
+          title: "엑시트",
+          genre: "comedy",
+          age: "15",
+          rating: 3,
+          keyword: "액션",
+          poster: "image/exit.jpg",
+        },
+        {
+          title: "아마존 활명수",
+          genre: "comedy",
+          age: "12",
+          rating: 2,
+          keyword: "액션",
+          poster: "image/amajon.jpg",
+        },
+        {
+          title: "파묘",
+          genre: "holor",
+          age: "15",
+          rating: 3,
+          keyword: "액션",
+          poster: "image/pamyo.jpg",
+        },
+        {
+          title: "타로",
+          genre: "holor",
+          age: "adult",
+          rating: 4,
+          keyword: "액션",
+          poster: "image/taro.jpg",
+        },
+      ];
+      document.addEventListener("DOMContentLoaded", function () {
+        // 초기화 버튼 클릭 이벤트
+        document.getElementById("reset").addEventListener("click", function () {
+          document.getElementById("genre").selectedIndex = 0;
+          document.getElementById("age").selectedIndex = 0;
+          document.getElementById("rating").selectedIndex = 0;
+          document.getElementById("keyword").value = "";
+          document.getElementById("movie-list").innerHTML = "";
         });
-    });
-  </script>
-</head>
 
-<body>
-  <div class="header">
-    <h1><a href="index.html">Three Sons Cinema</a></h1>
-    <div class="menu">
-      <a href="login.html">로그인</a>
-      <a href="newClient.html">회원가입</a>
-      <a href="#">마이페이지</a>
-    </div>
-  </div>
+        // 검색 버튼 클릭 이벤트
+        document
+          .getElementById("search")
+          .addEventListener("click", function () {
+            const genre = document.getElementById("genre").value;
+            const age = document.getElementById("age").value;
+            const rating = document.getElementById("rating").value;
+            const keyword = document.getElementById("keyword").value.trim();
 
-  <!-- 네비게이션 바 -->
-  <div class="navbar">
-    <a href="showingmoive.html">영화</a>
-    <a href="reservation.html">예매</a>
-    <a href="food_combo.html">매점</a>
-    <a href="suggest.html">추천</a>
-  </div>
-  <div class="container">
-    <div class="filter-section">
-      <select id="genre">
-        <option selected disabled value="">장르</option>
-        <option value="action">액션</option>
-        <option value="comedy">코미디</option>
-        <option value="drama">드라마</option>
-        <option value="holor">호러</option>
-        <!-- 추가 장르 선택 옵션 -->
-      </select>
-      <select id="age">
-        <option selected disabled value="">나이제한</option>
-        <option value="all">전체관람가</option>
-        <option value="12">12세 이상</option>
-        <option value="15">15세 이상</option>
-        <option value="adult">청소년 관람불가</option>
-      </select>
-      <select id="rating">
-        <option selected disabled value="">별점수</option>
-        <option value="5">★5.0</option>
-        <option value="4">★4.0</option>
-        <option value="3">★3.0</option>
-        <option value="2">★2.0</option>
-        <option value="1">★1.0</option>
-      </select>
-      <input type="text" id="keyword" placeholder="검색 키워드" />
-      <div class="search-btn">
-        <button id="reset">초기화</button>
-        <button id="search">검색</button>
+            const movieList = document.getElementById("movie-list");
+            movieList.innerHTML = ""; // 기존 목록 초기화
+
+            // 필터링
+            const filteredMovies = movieData.filter((movie) => {
+              return (
+                (!genre || movie.genre === genre) &&
+                (!age || movie.age === age) &&
+                (!rating || movie.rating === Number(rating)) &&
+                (!keyword || movie.keyword.includes(keyword))
+              );
+            });
+
+            // 결과 표시
+            if (filteredMovies.length > 0) {
+              filteredMovies.forEach((movie) => {
+                const listItem = document.createElement("li");
+
+                // 이미지 태그 생성
+                const img = document.createElement("img");
+                img.src = movie.poster; // 포스터 경로
+                img.alt = movie.title;
+                img.style.width = "200px"; // 이미지 크기 조정
+                img.style.height = "300px";
+
+                // 영화 제목 추가
+                const title = document.createElement("p");
+                title.textContent = movie.title;
+
+                // 리스트 아이템에 추가
+                listItem.appendChild(img);
+                listItem.appendChild(title);
+                movieList.appendChild(listItem);
+              });
+            } else {
+              movieList.innerHTML = "추천 영화가 없습니다.";
+            }
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- 상단 메뉴 -->
+    <div class="header">
+      <div class="header_content">
+        <div class="contents">
+          <h1 class="title">
+            <a href="index.html">
+              Three Sons
+              <span>Movie Cinema</span></a
+            >
+          </h1>
+          <ul class="memberInfo">
+            <li>
+              <a href="login.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                  alt="로그인"
+                />
+                <span>로그인</span>
+              </a>
+            </li>
+            <li>
+              <a href="newClient.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                  alt="회원가입"
+                />
+                <span>회원가입</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                  alt="마이페이지"
+                />
+                <span>마이페이지</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </div>
+      <div class="nav">
+        <div class="contents">
+          <ul class="nav-menu">
+            <li>
+              <h2>
+                <a href="showingmoive.html">영화</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="reservation.html">예매</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="food_combo.html">매점</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="suggest.html">추천</a>
+              </h2>
+            </li>
+          </ul>
+        </div>
+        <hr />
       </div>
     </div>
+    <div class="container">
+      <div class="filter-section">
+        <select id="genre">
+          <option selected disabled value="">장르</option>
+          <option value="action">액션</option>
+          <option value="comedy">코미디</option>
+          <option value="drama">드라마</option>
+          <option value="holor">호러</option>
+          <!-- 추가 장르 선택 옵션 -->
+        </select>
+        <select id="age">
+          <option selected disabled value="">나이제한</option>
+          <option value="all">전체관람가</option>
+          <option value="12">12세 이상</option>
+          <option value="15">15세 이상</option>
+          <option value="adult">청소년 관람불가</option>
+        </select>
+        <select id="rating">
+          <option selected disabled value="">별점수</option>
+          <option value="5">★5.0</option>
+          <option value="4">★4.0</option>
+          <option value="3">★3.0</option>
+          <option value="2">★2.0</option>
+          <option value="1">★1.0</option>
+        </select>
+        <input type="text" id="keyword" placeholder="검색 키워드" />
+        <div class="search-btn">
+          <button id="reset">초기화</button>
+          <button id="search">검색</button>
+        </div>
+      </div>
 
-    <h2>추천 영화</h2>
-    <ul id="movie-list">
-      <!-- 추천 영화 목록이 표시됩니다 -->
-    </ul>
-  </div>
-  <!--<div class="slider">
+      <h2>추천 영화</h2>
+      <ul id="movie-list">
+        <!-- 추천 영화 목록이 표시됩니다 -->
+      </ul>
+    </div>
+    <!--<div class="slider">
       <div class="slides">
         <img src="image/threeson.jpg" alt="Photo 1" />
         <img src="image/threeson1.jpg" alt="Photo 2" />
@@ -310,6 +360,5 @@
          더 많은 이미지 추가
       </div>
     </div>-->
-</body>
-
+  </body>
 </html>
