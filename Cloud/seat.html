@@ -72,7 +72,12 @@
           </div>
         </div>
         <div class="vertical-divider"></div>
-        <div class="date-display">2024.11.11(월) 18:00 ~ 20:05</div>
+        <div class="date-display">
+          <p><strong>영화:</strong> <span id="movie-title"></span></p>
+          <p><strong>날짜:</strong> <span id="movie-date"></span></p>
+          <p><strong>상영관:</strong> <span id="movie-screen"></span></p>
+          <p><strong>시간:</strong> <span id="movie-time"></span></p>
+        </div>
       </div>
     </div>
     <div class="seat-selection">
@@ -143,6 +148,27 @@
           this.classList.toggle("selected"); // 선택된 좌석 색상 변경
         });
       });
+
+      function getQueryParams() {
+        const params = new URLSearchParams(window.location.search); // 현재 URL의 쿼리 문자열 가져오기
+        return {
+          movie: params.get("movie"), // "movie" 파라미터 값 가져오기
+          date: params.get("date"),   // "date" 파라미터 값 가져오기
+          screen: params.get("screen"), // "screen" 파라미터 값 가져오기
+          time: params.get("time"),   // "time" 파라미터 값 가져오기
+        };
+      }
+
+      // URL에서 데이터 가져오기
+      const { movie, date, screen, time } = getQueryParams();
+
+      // 가져온 데이터를 HTML에 표시
+      document.getElementById("movie-title").textContent = movie || "선택 안됨";
+      document.getElementById("movie-date").textContent = date || "선택 안됨";
+      document.getElementById("movie-screen").textContent = screen || "선택 안됨";
+      document.getElementById("movie-time").textContent = time || "선택 안됨";
+
+      console.log("Parsed Params:", { movie, date, screen, time });
     </script>
   </body>
 </html>

@@ -498,6 +498,27 @@
     </div>
 
     <script>
+// 선택한 항목을 URL에 추가
+// 선택한 항목을 URL에 추가
+      function updateURL() {
+        const queryParams = new URLSearchParams();
+
+        if (selectedMovie) queryParams.set("movie", selectedMovie);
+        if (selectedDate) queryParams.set("date", `${currentMonth} ${selectedDate}`);
+        if (selectedScreen) queryParams.set("screen", selectedScreen);
+        if (selectedTime) queryParams.set("time", selectedTime);
+
+        let newURL = `${window.location.pathname}?${queryParams.toString()}`;
+
+        // URL의 인코딩된 문자 복원
+        newURL = newURL
+          .replace(/%20/g, " ") // 공백 복원
+          .replace(/%2F/g, "/") // 슬래시(/) 복원
+          .replace(/%3A/g, ":"); // 콜론(:) 복원
+
+        window.history.pushState({}, "", newURL); // URL 업데이트
+      }
+
       // 영화 선택 기능
       document.querySelectorAll(".movie-list").forEach((item) => {
         item.addEventListener("click", function () {
@@ -508,6 +529,12 @@
 
           // 현재 클릭한 항목에 선택 스타일 추가
           this.classList.add("selected");
+
+          // 상태 업데이트
+          selectedMovie = this.getAttribute("data-movie");
+
+          // URL 업데이트
+          updateURL();
         });
       });
 
@@ -521,6 +548,18 @@
 
           // 선택한 셀에 스타일 추가
           this.classList.add("selected");
+
+          // 클릭된 날짜 셀의 부모 달력을 찾기
+          const parentCalendar = this.closest(".calendar");
+          if (parentCalendar) {
+            currentMonth = parentCalendar.getAttribute("data-month");
+          }
+
+          // 상태 업데이트
+          selectedDate = this.textContent.trim();
+
+          // URL 업데이트
+          updateURL();
         });
       });
 
@@ -529,12 +568,19 @@
 
       // 각 시간 슬롯에 클릭 이벤트 추가
       timeSlots.forEach((slot) => {
-        slot.addEventListener("click", () => {
+        slot.addEventListener("click", function () {
           // 이전에 선택된 슬롯에서 selected 클래스 제거
           timeSlots.forEach((s) => s.classList.remove("selected"));
 
           // 현재 클릭된 슬롯에 selected 클래스 추가
-          slot.classList.add("selected");
+          this.classList.add("selected");
+
+          // 상태 업데이트
+          selectedTime = this.textContent.trim();
+          selectedScreen = this.getAttribute("data-screen") || "상영관 정보 없음";
+
+          // URL 업데이트
+          updateURL();
         });
       });
 
@@ -675,10 +721,23 @@
           const seatButton = document.createElement("button");
           seatButton.textContent = "좌석 선택";
           seatButton.className = "seat-selection";
-          // 클릭 이벤트 추가
+          // 버튼 클릭 이벤트 처리
           seatButton.addEventListener("click", () => {
-            // login.html로 이동
-            window.location.href = "seat.html";
+            if (selectedMovie && selectedDate && selectedScreen && selectedTime) {
+              const queryParams = new URLSearchParams({
+                movie: selectedMovie,
+                date: `${currentMonth} ${selectedDate}`,
+                screen: selectedScreen,
+                time: selectedTime,
+              });
+
+              console.log(`seat.html?${queryParams.toString()}`); // URL 확인
+
+              // 다음 페이지로 이동
+              window.location.href = `seat.html?${queryParams.toString()}`;
+            } else {
+              alert("모든 항목을 선택해주세요!");
+            }
           });
 
           actionCell.appendChild(seatButton);
@@ -686,7 +745,37 @@
 
           summaryBody.appendChild(row);
         }
+        
+        // 좌석 선택 버튼 클릭 이벤트 추가
+        document.addEventListener("DOMContentLoaded", () => {
+          // "좌석 선택" 버튼 클릭 이벤트 추가
+          const seatSelectionButton = document.querySelector(".seat-selection");
+
+          if (seatSelectionButton) {
+            seatSelectionButton.addEventListener("click", () => {
+              goToSeatSelection();
+            });
+          }
+        });
+
+        // 선택한 항목을 URL에 포함하여 다음 페이지로 이동
+        function goToSeatSelection() {
+          if (!selectedMovie || !selectedDate || !selectedTime || !selectedScreen) {
+            alert("모든 항목을 선택해주세요!"); // 필수 항목 선택 확인
+            return;
+          }
+
+          // URL 파라미터로 선택 정보를 전달
+          const queryParams = new URLSearchParams({
+            movie: selectedMovie,
+            date: `${currentMonth} ${selectedDate}`,
+            screen: selectedScreen,
+            time: selectedTime,
+          });
+        }
+
       }
+
     </script>
   </body>
 </html>
