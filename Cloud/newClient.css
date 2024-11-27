@@ -1,4 +1,7 @@
 /* 기본 스타일 */
+html {
+  overflow-y: scroll; /* 항상 세로 스크롤바 표시 */
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;

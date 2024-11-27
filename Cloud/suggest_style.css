@@ -1,10 +1,14 @@
+/* 기본 스타일 */
+html {
+  overflow-y: scroll; /* 항상 세로 스크롤바 표시 */
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* 폰트 설정 */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center; /* 텍스트를 중앙 정렬 */
 }
-
 .header_content {
   background-color: #fff;
   margin-bottom: 0; /* hr 위 간격 제거 */
@@ -108,7 +112,6 @@ ul {
   border: 1px solid #060606;
   width: 70%;
 }
-
 .container {
   width: 80%;
   max-width: 800px;

@@ -273,6 +273,11 @@ ul {
   cursor: pointer;
   margin-top: 10px;
 }
+button a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 버튼의 텍스트 색상 상속 */
+  display: inline-block; /* a 태그를 블록처럼 처리 */
+}
 /* 영화 포스터 스타일 */
 .movie-poster {
   text-align: center; /* 이미지를 중앙에 배치 */

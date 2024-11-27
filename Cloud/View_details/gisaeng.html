@@ -9,20 +9,73 @@
   <body>
     <!-- 상단 메뉴 -->
     <div class="header">
-      <h1><a href="../index.html">Three Sons Cinema</a></h1>
-      <div class="menu">
-        <a href="../login.html">로그인</a>
-        <a href="../newClient.html">회원가입</a>
-        <a href="#">마이페이지</a>
+      <div class="header_content">
+        <div class="contents">
+          <h1 class="title">
+            <a href="../index.html">
+              Three Sons
+              <span>Movie Cinema</span></a
+            >
+          </h1>
+          <ul class="memberInfo">
+            <li>
+              <a href="../login.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                  alt="로그인"
+                />
+                <span>로그인</span>
+              </a>
+            </li>
+            <li>
+              <a href="../newClient.html">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                  alt="회원가입"
+                />
+                <span>회원가입</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                  alt="마이페이지"
+                />
+                <span>마이페이지</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr />
       </div>
-    </div>
-
-    <!-- 네비게이션 바 -->
-    <div class="navbar">
-      <a href="../showingmoive.html">영화</a>
-      <a href="../reservation.html">예매</a>
-      <a href="../food_combo.html">매점</a>
-      <a href="../suggest.html">추천</a>
+      <div class="nav">
+        <div class="contents">
+          <ul class="nav-menu">
+            <li>
+              <h2>
+                <a href="../showingmoive.html">영화</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="../reservation.html">예매</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="../food_combo.html">매점</a>
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <a href="../suggest.html">추천</a>
+              </h2>
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </div>
     </div>
 
     <!-- 영화 정보 섹션 -->
@@ -44,7 +97,9 @@
           <span>평점 75%</span>
         </div>
         <div class="buttons">
-          <button class="reserve">예매하기</button>
+          <button class="reserve">
+            <a href="../reservation.html" target="_blank">예매하기</a>
+          </button>
         </div>
       </div>
     </div>

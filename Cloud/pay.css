@@ -1,3 +1,10 @@
+body {
+  font-family: Arial, sans-serif; /* 폰트 설정 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
 .header_content {
   background-color: #fff;
   margin-bottom: 0; /* hr 위 간격 제거 */

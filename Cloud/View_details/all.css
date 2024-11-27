@@ -5,53 +5,108 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+.header_content {
+  background-color: #fff;
+  margin-bottom: 0; /* hr 위 간격 제거 */
+}
 
-/* 상단 메뉴 스타일 */
-.header {
+.header_content .contents {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  margin-bottom: 0; /* hr 위 간격 제거 */
+  height: 100px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 34px;
-  margin-left: 200px;
+.section {
+  max-width: 1350px; /* 섹션의 최대 너비 */
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 20px; /* 내부 여백 */
 }
 
-.header h1 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.header .menu {
-  display: flex;
-  gap: 15px;
-  font-size: 14px;
-  margin-right: 200px;
-}
-.header .menu a {
+.contents span {
+  font-size: 20px;
   text-decoration: none; /* 밑줄 제거 */
   color: black; /* 링크 기본 색상 설정 */
 }
 
-/* 네비게이션 바 스타일 */
-.navbar {
+.header_content .contents .memberInfo {
   display: flex;
-  justify-content: center;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-  font-size: 20px;
+  align-items: center;
+  margin-right: 300px; /* 오른쪽 벽과 간격 조정 */
 }
 
-.navbar a {
-  margin: 0 50px;
+.header_content .contents .title {
+  margin-left: 300px; /* 특정 부분에만 여백 추가 */
+  font-size: 40px;
+  display: inline-block; /* 여백이 적용되도록 설정 */
+  margin-top: 30px;
+}
+.header .title a {
   text-decoration: none;
-  color: black;
-  font-weight: bold;
+  color: black; /* 링크 기본 색상 설정 */
+}
+.header_content .contents .memberInfo li a {
+  display: flex; /* 이미지와 텍스트를 Flexbox로 정렬 */
+  flex-direction: column; /* 수직으로 배치 */
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  width: 80px; /* 링크(a)의 고정 너비 */
+  height: 100px; /* 링크(a)의 고정 높이 */
+  text-decoration: none; /* 링크 밑줄 제거 */
 }
 
+.header_content .contents .memberInfo li a img {
+  display: block;
+  width: 36px; /* 이미지 크기 */
+  height: 36px;
+  margin-bottom: 0px; /* 이미지와 텍스트 사이 간격 */
+}
+
+.header_content .contents .memberInfo li a span {
+  font-size: 14px; /* 텍스트 크기 */
+  text-align: center; /* 텍스트 정렬 */
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.header_content hr {
+  border: 1px solid #eee;
+  width: 70%;
+}
+
+.nav .contents {
+  display: flex;
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+}
+
+.nav .nav-menu h2 a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #333;
+}
+
+.nav-menu h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.nav .nav-menu {
+  display: flex; /* 리스트를 가로로 정렬 */
+  gap: 100px; /* 항목 사이 간격 설정 */
+  margin: 0; /* 외부 여백 제거 */
+  padding: 0; /* 내부 여백 제거 */
+}
+
+.nav hr {
+  border: 1px solid #060606;
+  width: 70%;
+}
 /* 영화 정보 섹션 스타일 */
 .movie-section {
   display: flex;
@@ -128,7 +183,11 @@ body {
   border-radius: 5px;
   color: white;
 }
-
+button a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 버튼의 텍스트 색상 상속 */
+  display: inline-block; /* a 태그를 블록처럼 처리 */
+}
 .buttons .reserve {
   background-color: red;
 }

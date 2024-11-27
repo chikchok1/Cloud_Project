@@ -1,12 +1,13 @@
-/* 기본 스타일 */
+* {
+  box-sizing: border-box;
+}
 body {
-  font-family: "Noto Sans KR", "CJONLYONENEW", "맑은 고딕", "돋움", Dotum,
-    sans-serif;
+  font-family: Arial, sans-serif; /* 폰트 설정 */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center; /* 텍스트를 중앙 정렬 */
 }
-
 .header_content {
   background-color: #fff;
   margin-bottom: 0; /* hr 위 간격 제거 */
@@ -110,7 +111,6 @@ ul {
   border: 1px solid #060606;
   width: 70%;
 }
-
 .movies {
   display: grid;
   grid-template-columns: repeat(4, 200px);
