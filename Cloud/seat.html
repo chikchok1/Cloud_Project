@@ -189,6 +189,9 @@
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        let totalSeatsAllowed = 0; // 총 선택 가능 좌석 수
+        let selectedSeatsCount = 0; // 현재 선택된 좌석 수
+
         // URL 업데이트 함수 정의 (이벤트 리스너 이전)
         function updateURL() {
           const params = new URLSearchParams(window.location.search);
@@ -223,18 +226,61 @@
           window.history.replaceState({}, "", newURL);
         }
 
-        // 인원 클릭 시 색상이 바뀌도록 이벤트 추가
-        document.querySelectorAll(".count").forEach((seat) => {
-          seat.addEventListener("click", function () {
-            this.classList.toggle("counted"); // 선택된 좌석 색상 변경
-            updateURL(); // URL 업데이트 호출
+        // 선택 가능한 좌석 수 업데이트
+        function updateTotalSeatsAllowed() {
+          totalSeatsAllowed = 0; // 총 선택 가능 좌석 수 초기화
+          document.querySelectorAll(".age-group").forEach((ageGroup) => {
+            const selected = ageGroup.querySelector(".count.counted");
+            if (selected) {
+              totalSeatsAllowed += parseInt(selected.textContent, 10) || 0;
+            }
+          });
+
+          // 현재 선택된 좌석 수가 제한을 초과하는 경우 초과된 좌석 해제
+          const selectedSeats = document.querySelectorAll(".seat.selected");
+          if (selectedSeats.length > totalSeatsAllowed) {
+            selectedSeats.forEach((seat, index) => {
+              if (index >= totalSeatsAllowed) {
+                seat.classList.remove("selected");
+                selectedSeatsCount--;
+              }
+            });
+          }
+
+          console.log(`Total seats allowed: ${totalSeatsAllowed}`);
+        }
+
+        // 인원 클릭 시 같은 줄에서 한 개만 선택 가능하도록 이벤트 추가
+        document.querySelectorAll(".age-group").forEach((ageGroup) => {
+          const counts = ageGroup.querySelectorAll(".count");
+          counts.forEach((count) => {
+            count.addEventListener("click", function () {
+              // 같은 줄에서 이미 선택된 항목 해제
+              counts.forEach((c) => c.classList.remove("counted"));
+              // 클릭된 항목만 선택
+              this.classList.add("counted");
+              updateTotalSeatsAllowed(); // 총 선택 가능 좌석 수 업데이트
+              updateURL(); // URL 업데이트 호출
+            });
           });
         });
 
-        // 좌석 클릭 시 색상이 바뀌도록 이벤트 추가
+        // 좌석 클릭 시 선택 가능 여부 확인 및 색상 변경
         document.querySelectorAll(".seat").forEach((seat) => {
           seat.addEventListener("click", function () {
-            this.classList.toggle("selected"); // 선택된 좌석 색상 변경
+            if (seat.classList.contains("selected")) {
+              // 선택된 좌석 해제
+              seat.classList.remove("selected");
+              selectedSeatsCount--;
+            } else {
+              if (selectedSeatsCount < totalSeatsAllowed) {
+                // 좌석 선택 추가
+                seat.classList.add("selected");
+                selectedSeatsCount++;
+              } else {
+                alert("선택 가능한 좌석 수를 초과했습니다!");
+              }
+            }
             updateURL(); // URL 업데이트 호출
           });
         });
@@ -255,29 +301,30 @@
         } else {
           console.error("Pay button not found.");
         }
+
+        function getQueryParams() {
+          const params = new URLSearchParams(window.location.search); // 현재 URL의 쿼리 문자열 가져오기
+          return {
+            movie: params.get("movie"), // "movie" 파라미터 값 가져오기
+            date: params.get("date"), // "date" 파라미터 값 가져오기
+            screen: params.get("screen"), // "screen" 파라미터 값 가져오기
+            time: params.get("time"), // "time" 파라미터 값 가져오기
+          };
+        }
+
+        // URL에서 데이터 가져오기
+        const { movie, date, screen, time } = getQueryParams();
+
+        // 가져온 데이터를 HTML에 표시
+        document.getElementById("movie-title").textContent =
+          movie || "선택 안됨";
+        document.getElementById("movie-date").textContent = date || "선택 안됨";
+        document.getElementById("movie-screen").textContent =
+          screen || "선택 안됨";
+        document.getElementById("movie-time").textContent = time || "선택 안됨";
+
+        console.log("Parsed Params:", { movie, date, screen, time });
       });
-
-      function getQueryParams() {
-        const params = new URLSearchParams(window.location.search); // 현재 URL의 쿼리 문자열 가져오기
-        return {
-          movie: params.get("movie"), // "movie" 파라미터 값 가져오기
-          date: params.get("date"), // "date" 파라미터 값 가져오기
-          screen: params.get("screen"), // "screen" 파라미터 값 가져오기
-          time: params.get("time"), // "time" 파라미터 값 가져오기
-        };
-      }
-
-      // URL에서 데이터 가져오기
-      const { movie, date, screen, time } = getQueryParams();
-
-      // 가져온 데이터를 HTML에 표시
-      document.getElementById("movie-title").textContent = movie || "선택 안됨";
-      document.getElementById("movie-date").textContent = date || "선택 안됨";
-      document.getElementById("movie-screen").textContent =
-        screen || "선택 안됨";
-      document.getElementById("movie-time").textContent = time || "선택 안됨";
-
-      console.log("Parsed Params:", { movie, date, screen, time });
     </script>
   </body>
 </html>

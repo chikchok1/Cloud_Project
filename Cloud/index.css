@@ -108,6 +108,7 @@ ul {
 .nav hr {
   border: 1px solid #060606;
   width: 70%;
+  margin-bottom: 1px;
 }
 /* 동영상 섹션 스타일 */
 .video-section {
