@@ -76,9 +76,8 @@
         <hr />
       </div>
     </div>
-
-    <br>
-    <br>
+    <br />
+    <br />
 
     <div class="container">
       <div class="container">
@@ -251,7 +250,7 @@
                         <tr>
                           <td
                             class="movie-list"
-                            data-movie="귀멸의 칼날 : 무한성편"
+                            data-movie="귀멸의 칼날 : 무한열차편"
                           >
                             <img
                               src="image/19.png"
@@ -259,7 +258,7 @@
                               width="15"
                               height="15"
                             />
-                            귀멸의 칼날 : 무한열차편
+                            귀멸의 칼날 극장판
                           </td>
                         </tr>
                         <tr>
@@ -610,8 +609,10 @@
         const queryParams = new URLSearchParams();
 
         if (selectedMovie) queryParams.set("movie", selectedMovie);
-        if (selectedMovieImageSrc) queryParams.set("imageSrc", selectedMovieImageSrc);
-        if (selectedMovieImageAlt) queryParams.set("imageAlt", selectedMovieImageAlt);
+        if (selectedMovieImageSrc)
+          queryParams.set("imageSrc", selectedMovieImageSrc);
+        if (selectedMovieImageAlt)
+          queryParams.set("imageAlt", selectedMovieImageAlt);
         if (selectedMoviePoster) queryParams.set("poster", selectedMoviePoster);
         if (selectedDate)
           queryParams.set("date", `${currentMonth} ${selectedDate}`);
@@ -716,8 +717,8 @@
           if (selectedMovie === "너의 이름은") {
             selectedMoviePoster = "image/yourname.png";
           } else if (selectedMovie === "꽃다발 같은 사랑을 했다") {
-            selectedMoviePoster = "image/guical.jpg";
-          } else if (selectedMovie === "귀멸의 칼날 : 무한성편") {
+            selectedMoviePoster = "image/hana.png";
+          } else if (selectedMovie === "귀멸의 칼날 : 무한열차편") {
             selectedMoviePoster = "image/guical.jpg";
           } else if (selectedMovie === "짱구는 못말려 : B급 음식 서바이벌") {
             selectedMoviePoster = "image/jjanggu.jpg";
@@ -848,45 +849,47 @@
           seatButton.textContent = "좌석 선택";
           seatButton.className = "seat-selection";
           // 버튼 클릭 이벤트 처리
-          
+
           seatButton.addEventListener("click", () => {
-          if (selectedMovie && selectedDate && selectedScreen && selectedTime) {
-            // URL 파라미터로 데이터 생성
-            const queryParams = new URLSearchParams({
-              movie: selectedMovie,
-              date: `${currentMonth} ${selectedDate}`,
-              screen: selectedScreen,
-              time: selectedTime,
-              poster: selectedMoviePoster || "", // 포스터 정보 추가
-              imageSrc: selectedMovieImageSrc || "", // 선택한 영화 이미지 경로 추가
-              imageAlt: selectedMovieImageAlt || "", // 선택한 영화 이미지 대체 텍스트 추가
-            });
+            if (
+              selectedMovie &&
+              selectedDate &&
+              selectedScreen &&
+              selectedTime
+            ) {
+              // URL 파라미터로 데이터 생성
+              const queryParams = new URLSearchParams({
+                movie: selectedMovie,
+                date: `${currentMonth} ${selectedDate}`,
+                screen: selectedScreen,
+                time: selectedTime,
+                poster: selectedMoviePoster || "", // 포스터 정보 추가
+                imageSrc: selectedMovieImageSrc || "", // 선택한 영화 이미지 경로 추가
+                imageAlt: selectedMovieImageAlt || "", // 선택한 영화 이미지 대체 텍스트 추가
+              });
 
-            // 디버깅: 최종 URL 출력
-            const finalURL = `seat.html?${queryParams.toString()}`;
-            console.log("이동할 URL:", finalURL);
+              // 디버깅: 최종 URL 출력
+              const finalURL = `seat.html?${queryParams.toString()}`;
+              console.log("이동할 URL:", finalURL);
 
-            // 다음 페이지로 이동
-            window.location.href = finalURL;
-          } else {
-            alert("모든 항목을 선택해주세요!");
-            console.error("선택되지 않은 데이터:", {
-              selectedMovie,
-              selectedDate,
-              selectedScreen,
-              selectedTime,
-            });
-          }
-        });
+              // 다음 페이지로 이동
+              window.location.href = finalURL;
+            } else {
+              alert("모든 항목을 선택해주세요!");
+              console.error("선택되지 않은 데이터:", {
+                selectedMovie,
+                selectedDate,
+                selectedScreen,
+                selectedTime,
+              });
+            }
+          });
 
           actionCell.appendChild(seatButton);
           row.appendChild(actionCell);
 
           summaryBody.appendChild(row);
         }
-
-
-
       }
     </script>
   </body>

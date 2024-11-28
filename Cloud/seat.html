@@ -188,7 +188,6 @@
       />
     </div>
     <script>
-
       document.addEventListener("DOMContentLoaded", function () {
         // URL 업데이트 함수 정의 (이벤트 리스너 이전)
         function updateURL() {
@@ -198,15 +197,17 @@
           const ageGroups = ["일반", "청소년", "경로", "우대"];
           ageGroups.forEach((ageGroup, index) => {
             const selectedCount = document
-              .querySelectorAll(".age-group")[index]
-              ?.querySelector(".count.counted")?.textContent;
+              .querySelectorAll(".age-group")
+              [index]?.querySelector(".count.counted")?.textContent;
             params.set(ageGroup, selectedCount || "0");
           });
 
           // 좌석 정보 업데이트
           const selectedSeats = [];
           document.querySelectorAll(".seat.selected").forEach((seat) => {
-            const row = seat.closest(".seat-row").querySelector(".row-label").textContent;
+            const row = seat
+              .closest(".seat-row")
+              .querySelector(".row-label").textContent;
             const number = seat.textContent;
             selectedSeats.push(`${row}${number}`);
           });
@@ -265,7 +266,6 @@
           time: params.get("time"), // "time" 파라미터 값 가져오기
         };
       }
-
 
       // URL에서 데이터 가져오기
       const { movie, date, screen, time } = getQueryParams();
