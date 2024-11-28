@@ -77,12 +77,8 @@
       </div>
     </div>
 
-    <div class="title">
-      <h1>영화예매</h1>
-      <hr />
-      <br />
-      <br />
-    </div>
+    <br>
+    <br>
 
     <div class="container">
       <div class="container">
@@ -609,10 +605,14 @@
     <script>
       // 선택한 항목을 URL에 추가
       // 선택한 항목을 URL에 추가
+      // URL 업데이트 함수
       function updateURL() {
         const queryParams = new URLSearchParams();
 
         if (selectedMovie) queryParams.set("movie", selectedMovie);
+        if (selectedMovieImageSrc) queryParams.set("imageSrc", selectedMovieImageSrc);
+        if (selectedMovieImageAlt) queryParams.set("imageAlt", selectedMovieImageAlt);
+        if (selectedMoviePoster) queryParams.set("poster", selectedMoviePoster);
         if (selectedDate)
           queryParams.set("date", `${currentMonth} ${selectedDate}`);
         if (selectedScreen) queryParams.set("screen", selectedScreen);
@@ -642,6 +642,11 @@
 
           // 상태 업데이트
           selectedMovie = this.getAttribute("data-movie");
+
+          // 선택된 영화의 이미지 정보 가져오기
+          const imageElement = this.querySelector("img");
+          selectedMovieImageSrc = imageElement?.getAttribute("src") || "";
+          selectedMovieImageAlt = imageElement?.getAttribute("alt") || "";
 
           // URL 업데이트
           updateURL();
@@ -843,28 +848,36 @@
           seatButton.textContent = "좌석 선택";
           seatButton.className = "seat-selection";
           // 버튼 클릭 이벤트 처리
+          
           seatButton.addEventListener("click", () => {
-            if (
-              selectedMovie &&
-              selectedDate &&
-              selectedScreen &&
-              selectedTime
-            ) {
-              const queryParams = new URLSearchParams({
-                movie: selectedMovie,
-                date: `${currentMonth} ${selectedDate}`,
-                screen: selectedScreen,
-                time: selectedTime,
-              });
+          if (selectedMovie && selectedDate && selectedScreen && selectedTime) {
+            // URL 파라미터로 데이터 생성
+            const queryParams = new URLSearchParams({
+              movie: selectedMovie,
+              date: `${currentMonth} ${selectedDate}`,
+              screen: selectedScreen,
+              time: selectedTime,
+              poster: selectedMoviePoster || "", // 포스터 정보 추가
+              imageSrc: selectedMovieImageSrc || "", // 선택한 영화 이미지 경로 추가
+              imageAlt: selectedMovieImageAlt || "", // 선택한 영화 이미지 대체 텍스트 추가
+            });
 
-              console.log(`seat.html?${queryParams.toString()}`); // URL 확인
+            // 디버깅: 최종 URL 출력
+            const finalURL = `seat.html?${queryParams.toString()}`;
+            console.log("이동할 URL:", finalURL);
 
-              // 다음 페이지로 이동
-              window.location.href = `seat.html?${queryParams.toString()}`;
-            } else {
-              alert("모든 항목을 선택해주세요!");
-            }
-          });
+            // 다음 페이지로 이동
+            window.location.href = finalURL;
+          } else {
+            alert("모든 항목을 선택해주세요!");
+            console.error("선택되지 않은 데이터:", {
+              selectedMovie,
+              selectedDate,
+              selectedScreen,
+              selectedTime,
+            });
+          }
+        });
 
           actionCell.appendChild(seatButton);
           row.appendChild(actionCell);
@@ -872,38 +885,8 @@
           summaryBody.appendChild(row);
         }
 
-        // 좌석 선택 버튼 클릭 이벤트 추가
-        document.addEventListener("DOMContentLoaded", () => {
-          // "좌석 선택" 버튼 클릭 이벤트 추가
-          const seatSelectionButton = document.querySelector(".seat-selection");
 
-          if (seatSelectionButton) {
-            seatSelectionButton.addEventListener("click", () => {
-              goToSeatSelection();
-            });
-          }
-        });
 
-        // 선택한 항목을 URL에 포함하여 다음 페이지로 이동
-        function goToSeatSelection() {
-          if (
-            !selectedMovie ||
-            !selectedDate ||
-            !selectedTime ||
-            !selectedScreen
-          ) {
-            alert("모든 항목을 선택해주세요!"); // 필수 항목 선택 확인
-            return;
-          }
-
-          // URL 파라미터로 선택 정보를 전달
-          const queryParams = new URLSearchParams({
-            movie: selectedMovie,
-            date: `${currentMonth} ${selectedDate}`,
-            screen: selectedScreen,
-            time: selectedTime,
-          });
-        }
       }
     </script>
   </body>

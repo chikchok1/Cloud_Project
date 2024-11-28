@@ -94,7 +94,7 @@
                 <span class="test">
                   <img src="image/all.png" alt="전체" />
                 </span>
-                모아나 2(2D더빙)
+                <span class="movie-title">모아나 2(2D더빙)</span>
               </strong>
               <dl class="dlist_infor">
                 <h5>일시 : <strong>2024-11-27 (수) 10:45 ~ 12:34</strong></h5>
@@ -268,6 +268,87 @@
           checkbox.checked = isChecked; // 모든 세부 체크박스 상태 변경
         });
       });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const poster = params.get("poster");
+      const imageSrc = params.get("imageSrc");
+      const movie = params.get("movie");
+      const rawDate = params.get("date") || "날짜 정보 없음"; // date 파라미터 가져오기
+      const time = params.get("time") || "시간 정보 없음"; // time 파라미터 가져오기
+      const screen = params.get("screen") || "상영관 정보 없음"; // screen 파라미터 가져오기
+      const seats = params.get("seats") || "좌석 정보 없음"; // seats 파라미터 가져오기
+
+      // 포스터 이미지 업데이트
+      const posterImage = document.querySelector(".movie_infor .thm img");
+      if (poster && posterImage) {
+        posterImage.src = poster;
+        posterImage.alt = "선택된 영화 포스터";
+      } else {
+        console.error("포스터 이미지나 URL 파라미터를 찾을 수 없습니다.");
+      }
+
+      // 등급 이미지 업데이트
+      const gradeImage = document.querySelector(".test img");
+      if (imageSrc && gradeImage) {
+        gradeImage.src = imageSrc;
+        gradeImage.alt = "영화 등급 이미지";
+      } else {
+        console.error("등급 이미지나 URL 파라미터를 찾을 수 없습니다.");
+      }
+
+      // 영화 제목 업데이트
+      const movieTitleElement = document.querySelector(".movie-title");
+      if (movie && movieTitleElement) {
+        movieTitleElement.textContent = movie;
+      } else {
+        console.error("영화 제목 요소나 URL 파라미터를 찾을 수 없습니다.");
+      }
+
+      // 일시 정보 업데이트
+      const dateTimeElement = document.querySelector(".dlist_infor h5:nth-child(1) strong");
+      if (dateTimeElement) {
+        const formattedDate = rawDate.replace(/\s\/\s/g, "-"); // "YYYY / MM / DD" -> "YYYY-MM-DD"
+        dateTimeElement.textContent = `${formattedDate} / ${time}`;
+      } else {
+        console.error("일시 요소를 찾을 수 없습니다.");
+      }
+
+      // 상영관 정보 업데이트
+      const screenElement = document.querySelector(".dlist_infor h5:nth-child(2)");
+      if (screenElement) {
+        screenElement.textContent = `영화관 : 부산본점 ${screen}`;
+      } else {
+        console.error("상영관 요소를 찾을 수 없습니다.");
+      }
+
+      // 인원 정보 업데이트
+      const ageGroups = ["일반", "청소년", "경로", "우대"];
+      const audienceInfo = ageGroups
+        .map((group) => {
+          const count = params.get(group) || "0";
+          return count !== "0" ? `${group}${count}` : null; // 0인 값은 제외
+        })
+        .filter(Boolean) // null 제거
+        .join(", ");
+
+      const audienceElement = document.querySelector(".dlist_infor h5:nth-child(3)");
+      if (audienceElement) {
+        audienceElement.textContent = audienceInfo
+          ? `인원 : ${audienceInfo}`
+          : "인원 : 선택되지 않음";
+      } else {
+        console.error("인원 요소를 찾을 수 없습니다.");
+      }
+
+      // 좌석 정보 업데이트
+      const seatElement = document.querySelector(".seat_infor h5 strong");
+      if (seatElement) {
+        seatElement.textContent = seats; // URL에서 가져온 좌석 정보 출력
+      } else {
+        console.error("좌석 요소를 찾을 수 없습니다.");
+      }
     });
   </script>
 </html>

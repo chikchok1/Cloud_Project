@@ -172,7 +172,7 @@
         </div>
       </div>
 
-      <button class="pay-button"><a href="pay.html">결제하기</a></button>
+      <button class="pay-button" id="payButton">결제하기</button>
     </div>
     <!-- 추가된 이미지 -->
     <div class="movie-poster">
@@ -188,17 +188,72 @@
       />
     </div>
     <script>
-      // 인원 클릭 시 색상이 바뀌도록 이벤트 추가
-      document.querySelectorAll(".count").forEach((seat) => {
-        seat.addEventListener("click", function () {
-          this.classList.toggle("counted"); // 선택된 좌석 색상 변경
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // URL 업데이트 함수 정의 (이벤트 리스너 이전)
+        function updateURL() {
+          const params = new URLSearchParams(window.location.search);
+
+          // 인원 정보 업데이트
+          const ageGroups = ["일반", "청소년", "경로", "우대"];
+          ageGroups.forEach((ageGroup, index) => {
+            const selectedCount = document
+              .querySelectorAll(".age-group")[index]
+              ?.querySelector(".count.counted")?.textContent;
+            params.set(ageGroup, selectedCount || "0");
+          });
+
+          // 좌석 정보 업데이트
+          const selectedSeats = [];
+          document.querySelectorAll(".seat.selected").forEach((seat) => {
+            const row = seat.closest(".seat-row").querySelector(".row-label").textContent;
+            const number = seat.textContent;
+            selectedSeats.push(`${row}${number}`);
+          });
+
+          if (selectedSeats.length > 0) {
+            params.set("seats", selectedSeats.join(",")); // 좌석 정보를 쉼표로 구분
+          } else {
+            params.delete("seats"); // 선택된 좌석이 없으면 삭제
+          }
+
+          // URL 업데이트
+          const newURL = `${window.location.pathname}?${params.toString()}`;
+          window.history.replaceState({}, "", newURL);
+        }
+
+        // 인원 클릭 시 색상이 바뀌도록 이벤트 추가
+        document.querySelectorAll(".count").forEach((seat) => {
+          seat.addEventListener("click", function () {
+            this.classList.toggle("counted"); // 선택된 좌석 색상 변경
+            updateURL(); // URL 업데이트 호출
+          });
         });
-      });
-      // 좌석 클릭 시 색상이 바뀌도록 이벤트 추가
-      document.querySelectorAll(".seat").forEach((seat) => {
-        seat.addEventListener("click", function () {
-          this.classList.toggle("selected"); // 선택된 좌석 색상 변경
+
+        // 좌석 클릭 시 색상이 바뀌도록 이벤트 추가
+        document.querySelectorAll(".seat").forEach((seat) => {
+          seat.addEventListener("click", function () {
+            this.classList.toggle("selected"); // 선택된 좌석 색상 변경
+            updateURL(); // URL 업데이트 호출
+          });
         });
+
+        // 결제 버튼 클릭 이벤트
+        const payButton = document.getElementById("payButton");
+        if (payButton) {
+          payButton.addEventListener("click", function () {
+            try {
+              // 현재 URL의 쿼리 문자열을 그대로 사용하여 이동
+              const currentSearch = window.location.search;
+              console.log("Navigating to:", `pay.html${currentSearch}`); // 디버깅용 로그
+              window.location.href = `pay.html${currentSearch}`; // 페이지 이동
+            } catch (error) {
+              console.error("Error during navigation:", error);
+            }
+          });
+        } else {
+          console.error("Pay button not found.");
+        }
       });
 
       function getQueryParams() {
@@ -210,6 +265,7 @@
           time: params.get("time"), // "time" 파라미터 값 가져오기
         };
       }
+
 
       // URL에서 데이터 가져오기
       const { movie, date, screen, time } = getQueryParams();
