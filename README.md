@@ -16,11 +16,10 @@ HTML · CSS · 순수 JavaScript로 제작한 프론트엔드를 **GCP(Google Cl
 
 ## 🎥 실행 영상
 
-실제 웹 사이트 시연 영상입니다. (동영상 위에서 마우스 우클릭으로 재생 컨트롤이 가능합니다.)
 
-<video src="../%EC%8B%A4%ED%96%89%20%EC%98%81%EC%83%81.mp4" controls="controls" width="100%" height="auto">
-  [▶️ 실행 영상 다운로드 및 보러 가기](../%EC%8B%A4%ED%96%89%20%EC%98%81%EC%83%81.mp4)
-</video>
+https://github.com/user-attachments/assets/700d8a17-e9bb-481f-917b-7d46a8fc3bba
+
+
 
 ---
 
@@ -105,9 +104,7 @@ Cloud/
 
 ## ☁️ 시스템 아키텍처
 
-*(아래 그림 파일 경로 위치에 그려두신 이미지를 `architecture.png` 라는 이름으로 저장해서 덮어씌워 주시면 됩니다.)*
-
-![시스템 아키텍처 다이어그램](image/architecture.png)
+![system architecture](https://github.com/user-attachments/assets/1b7edcf6-0020-4446-9865-37f3e4d41aac)
 
 > **참고**: 서버 측 코드(DB 쿼리, 서버 설정 등)는 GCP VM 터미널에서 직접 작성·관리되었으며  
 > 이 저장소에는 **프론트엔드(HTML/CSS/JS) 파일만** 포함되어 있습니다.
@@ -203,14 +200,6 @@ xdg-open index.html    # Linux
 
 > **참고**: 동영상 배경 자동재생 및 일부 기능은 로컬 파일 직접 열기(`file://`)보다 로컬 웹서버 환경에서 더 안정적으로 동작합니다.  
 > VS Code의 **Live Server** 확장 등을 사용하는 것을 권장합니다.
-
----
-
-## 👥 팀원
-
-| 역할 | 이름 |
-|------|------|
-| 팀명 | Three Sons |
 
 ---
 
